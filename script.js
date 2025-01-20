@@ -1,10 +1,77 @@
 // Array of recipes with URLs and ingredients
 const recipes = [
-    { url: 'https://www.youtube.com/watch?v=MbdQzjaevXQ&list=PLbS0HkS8Xsoq1j4kiZFLP9w1e3pQADR3g&index=3', image: 'images/plov-student-edition.jpg', ingredients: ['pot', 'pan', 'rice', 'beef', 'carrots', 'garlic', 'onions'], time: 25},
-    { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', image: 'images/18th-ct-cheese-soup.jpg', ingredients: ['cheese', 'bread', 'pot'], time: 25},
-    { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', image: 'images/7-ways-instantnoodles.jpg', ingredients: ['instant noodels', 'pan'], time: 5},
-    { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', image: 'images/tuna-instantnoodles.jpg', ingredients: ['instantnoodles', 'tuna', 'microwave'], time: 5},
-    { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', image: 'images/stragonoff.jpg', ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms', 'pan'], time: 20},
+    { 
+        url: 'https://www.youtube.com/watch?v=MbdQzjaevXQ&list=PLbS0HkS8Xsoq1j4kiZFLP9w1e3pQADR3g&index=3', 
+        image: 'images/plov-student-edition.jpg', 
+        title: 'Plov Student Edition',
+        description: 'Rice, meat, and vegetables all steamed in one pot. Nice and easy.',
+        ingredients: ['pot', 'pan', 'wok', 'oven', 'microwave', 'rice', 'beef', 'carrots', 'garlic', 'onions'], 
+        time: 25,
+    },
+    { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', 
+        image: 'images/18th-ct-cheese-soup.jpg', 
+        title: '18th Century Cheese Soup',
+        description: 'A wholsome historical recipe using just bread and cheese.',
+        ingredients: ['cheese', 'bread', 'pot', 'pan'], 
+        time: 25
+    },
+    { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', 
+        image: 'images/7-ways-instantnoodles.jpg', 
+        title: '7 Ways to Cook Instant Noodles',
+        description: '7 ways to cook instant noodles, contains some comedic exaggeration.',
+        ingredients: ['instant noodels', 'pan'], 
+        time: 5
+    },
+    { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', 
+       image: 'images/tuna-instantnoodles.jpg',
+       title: 'Tuna Noodles',
+       description: 'Just a microwave needed to bring a twist to instant noodles.',
+       ingredients: ['instantnoodles', 'tuna', 'microwave'], 
+       time: 5
+    },
+    { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', 
+       image: 'images/stragonoff.jpg', 
+       title: 'Stragonoff',
+       description: 'Russian sauteed beef with mushrooms, cheese, and pickles.',
+       ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms', 'pan', 'pot'], 
+       time: 20
+    },
+    { 
+        url: 'https://www.townsends.us/blogs/blog/simple-apple-pudding', 
+        image: 'images/plov-student-edition.jpg', 
+        title: 'Simple Apple Pudding',
+        description: 'Just an apple and some flour or dough needed.',
+        ingredients: ['apple', 'flour', 'oven'], 
+        time: 20,
+    },
+    { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', 
+        image: 'images/18th-ct-cheese-soup.jpg', 
+        title: '18th Century Cheese Soup',
+        description: 'A wholsome historical recipe using just bread and cheese.',
+        ingredients: ['cheese', 'bread', 'pot'], 
+        time: 25
+    },
+    { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', 
+        image: 'images/7-ways-instantnoodles.jpg', 
+        title: '7 Ways to Cook Instant Noodles',
+        description: '7 ways to cook instant noodles, contains some comedic exaggeration.',
+        ingredients: ['instant noodels', 'pan'], 
+        time: 5
+    },
+    { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', 
+       image: 'images/tuna-instantnoodles.jpg',
+       title: 'Tuna Noodles',
+       description: 'Just a microwave needed to bring a twist to instant noodles.',
+       ingredients: ['instantnoodles', 'tuna', 'microwave'], 
+       time: 5
+    },
+    { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', 
+       image: 'images/stragonoff.jpg', 
+       title: 'Stragonoff',
+       description: 'Russian sauteed beef with mushrooms, cheese, and pickles.',
+       ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms', 'pan'], 
+       time: 20
+    },
 ]
 
 // Get filter buttons and recipe list container
@@ -44,23 +111,38 @@ function displayRecipes(recipes) {
         recipeItem.classList.add('recipe-item');
 
         //Create an image element for the thumbnail
-        const recipeImage = document.createElement('a');
-        recipeText.src = recipe.image;
-        recipeText.alt = 'Recipe Thumbnail';
-        recipeText.classList.add('recipe-thumbnail');
+        const recipeImage = document.createElement('img');
+        recipeImage.src = recipe.image;
+        recipeImage.alt = 'Recipe Thumbnail';
+        recipeImage.classList.add('recipe-thumbnail');
 
         //Create an image element for the thumbnail
-        const recipeTitle = document.createElement('img');
+        const recipeDetails = document.createElement('div');
+        recipeDetails.classList.add('recipe-details')
+
+        const recipeTitle = document.createElement('h3');
+        recipeTitle.textContent = recipe.title;
+        recipeTitle.classList.add('recipe-title');
+
+        const recipeDescription = document.createElement('p');
+        recipeDescription.textContent = recipe.description;
+        recipeDescription.classList.add('recipe-description');
 
         // Create a link to the recipe
         const recipeLink = document.createElement('a');
         recipeLink.href = recipe.url;
         recipeLink.textContent = `View Recipe`;
         recipeLink.classList.add('recipe-link');
+
+        // Append details and link to the details container
+        recipeDetails.appendChild(recipeTitle);
+        recipeDetails.appendChild(recipeDescription);
+        recipeDetails.appendChild(recipeLink);
         
         // Append image and link to the recipe item
         recipeItem.appendChild(recipeImage);
-        recipeItem.appendChild(recipeLink);
+        //recipeItem.appendChild(recipeLink);
+        recipeItem.appendChild(recipeDetails);
         
         recipesList.appendChild(recipeItem);
     });
