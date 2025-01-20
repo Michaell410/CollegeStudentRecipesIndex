@@ -1,10 +1,10 @@
 // Array of recipes with URLs and ingredients
 const recipes = [
-    { url: 'https://www.youtube.com/watch?v=MbdQzjaevXQ&list=PLbS0HkS8Xsoq1j4kiZFLP9w1e3pQADR3g&index=3', ingredients: ['pot', 'rice', 'beef'], time: 5},
-    { url: 'https://example.com/recipe2', image: 'images/chicken and vegetables.jpg', ingredients: ['beef', 'vegetables'], time: 10},
-    { url: 'https://example.com/recipe3', ingredients: ['chicken', 'vegetables'], time: 15},
-    { url: 'https://example.com/recipe4', ingredients: ['eggs', 'vegetables'], time: 20},
-    { url: 'https://example.com/recipe5', ingredients: ['beef', 'cheese'], time: 15},
+    { url: 'https://www.youtube.com/watch?v=MbdQzjaevXQ&list=PLbS0HkS8Xsoq1j4kiZFLP9w1e3pQADR3g&index=3', image: 'images/plov-student-edition.jpg', ingredients: ['pot', 'pan', 'rice', 'beef', 'carrots', 'garlic', 'onions'], time: 25},
+    { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', image: 'images/18th-ct-cheese-soup.jpg', ingredients: ['cheese', 'bread', 'pot'], time: 25},
+    { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', image: 'images/7-ways-instantnoodles.jpg', ingredients: ['instant noodels', 'pan'], time: 5},
+    { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', image: 'images/tuna-instantnoodles.jpg', ingredients: ['instantnoodles', 'tuna'], time: 5},
+    { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', image: 'stragonoff', ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms'], time: 20},
 ]
 
 // Get filter buttons and recipe list container
@@ -72,7 +72,7 @@ filterButtons.forEach(button => {
 // Handle time filter button clicks
 timeFilterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const selectedTime = parseInt(button.dataset.ingredient);
+        const selectedTime = parseInt(button.dataset.time);
 
         // Reset all time filter buttons
         timeFilterButtons.forEach(btn => {
