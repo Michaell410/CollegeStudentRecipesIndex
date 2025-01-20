@@ -8,20 +8,42 @@
 </head>
 <body>
     <div class="container">
-        <h1>Recipe Index</h1>
+        <h1>Surprise Me!</h1>
+        
+        <p>Your Ingredients</p>
 
         <!-- Ingredient filter buttons -->
         <div class="filters">
-            <button class="filter-btn" data-ingredient="eggs">Eggs</button>
-            <button class="filter-btn" data-ingredient="beef">Beef</button>
-            <button class="filter-btn" data-ingredient="chicken">Chicken</button>
-            <button class="filter-btn" data-ingredient="vegetables">Vegetables</button>
-            <button class="filter-btn" data-ingredient="cheese">Cheese</button>
+            <button class="filter-btn" data-ingredient="eggs" id="protein-btn">Eggs</button>
+            <button class="filter-btn" data-ingredient="beef" id="protein-btn">Beef</button>
+            <button class="filter-btn" data-ingredient="chicken" id="protein-btn">Chicken</button>
+            <button class="filter-btn" data-ingredient="vegetables" id="fiber-btn">Vegetables</button>
+            <button class="filter-btn" data-ingredient="cheese" id="diary-btn">Cheese</button>
+        </div>
+
+        <p>Your Utensils</p>
+
+        <!-- Utensils filter buttons -->
+        <div class="filters">
+            <button class="filter-btn" data-ingredient="pan" id="stovetop-btn">Pan</button>
+            <button class="filter-btn" data-ingredient="wok" id="stovetop-btn">Wok</button>
+            <button class="filter-btn" data-ingredient="pot" id="stovetop-btn">Pot</button>
+            <button class="filter-btn" data-ingredient="oven" id="oven-btn">Oven</button>
+            <button class="filter-btn" data-ingredient="microwave" id="microwave-btn">Microwave</button>
         </div>
 
         <!-- Displaying filtered recipes -->
         <div id="recipes-list" class="recipes-list">
             <!-- Recipe links will appear here -->
+        </div>
+
+        <!-- Time filter buttons -->
+        <div class="time-filters">
+            <button class="filter-btn" data-ingredient="5mins" id="time-btn">5 Min</button>
+            <button class="filter-btn" data-ingredient="10mins" id="time-btn">10 Min</button>
+            <button class="filter-btn" data-ingredient="15mins" id="time-btn">15 Min</button>
+            <button class="filter-btn" data-ingredient="20mins" id="time-btn">20 Min</button>
+            <button class="filter-btn" data-ingredient="25mins" id="time-btn">25 Min</button>
         </div>
     </div>
 

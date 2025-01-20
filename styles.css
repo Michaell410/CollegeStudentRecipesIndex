@@ -6,16 +6,19 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
 }
 
 .container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 1000px;
+    margin: 10px auto;
     padding: 20px;
+    padding-bottom: 60px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 h1 {
@@ -23,23 +26,74 @@ h1 {
     margin-bottom: 20px;
 }
 
+p {
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
 .filters {
     text-align: center;
     margin-bottom: 20px;
 }
 
+.time-filters{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    background-color: #DD6E42;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .filter-btn {
-    background-color: #007BFF;
+    background-color: #b5b5b5;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 3px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 30px;
+}
+
+/* Specific colors for each filter when active */
+#protein-btn.active {
+    background-color: #EC5F5A;
+}
+
+#fiber-btn.active {
+    background-color: #BFE450;
+}
+
+#diary-btn.active {
+    background-color: #E5D798;
+}
+
+#carbs-btn.active {
+    background-color: #EFCE4E;
+}
+
+#time-btn {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #007bff00;
+}
+
+#time-btn.active {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #007bff00;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.313);
 }
 
 .filter-btn.active {
-    background-color: #28a745;
+    font-weight: bold;
+    background-color: #e09628;
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.313);
 }
 
 .recipes-list {
@@ -47,17 +101,30 @@ h1 {
 }
 
 .recipe-item {
+    display: flex;
+    justify-content: flex-start;
     padding: 10px;
     margin: 5px 0;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 50px;
+}
+
+.recipe-thumbnail {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 40px;
 }
 
 .recipe-item a {
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+
 }
 
 .recipe-item a:hover {
