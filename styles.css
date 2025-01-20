@@ -29,6 +29,7 @@ h1 {
 p {
     text-align: center;
     font-size: 20px;
+
     margin: 10px;
 }
 
@@ -76,6 +77,7 @@ p {
 #carbs-btn.active {
     background-color: #EFCE4E;
 }
+
 
 #time-btn {
     font-size: 20px;
