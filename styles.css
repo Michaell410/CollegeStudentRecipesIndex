@@ -14,7 +14,7 @@ body {
     max-width: 1000px;
     margin: 10px auto;
     padding: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 50px;
@@ -44,15 +44,18 @@ p {
 
 .time-filters{
     position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 10%;
+    bottom: 20px; /* Position it slightly above the bottom for aesthetics */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: auto; /* Make the width fit the content */
+    height: auto; /* Adjust height to fit the buttons */
     display: flex;
-    justify-content: center;
-    z-index: 10;
-    background-color: #DD6E42;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Center the buttons */
+    background-color: #DD6E42; /* Background color for the bar */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 60px; /* Round the corners for a neat look */
+    padding: 10px; /* Add some spacing inside the bar */
+    z-index: 10; /* Ensure it stays on top of other content */
 }
 
 .utensil-filters{
@@ -96,27 +99,34 @@ p {
     background-color: #564eef;
 }
 
+#sauce-btn.active {
+    background-color: #aa5b36;
+}
+
 #utensil-btn {
     background-color: #DD6E42;
 }
 
 #utensil-btn.active {
     background-color: #b5b5b5;
-    ;
 }
 
 
-#time-btn {
+.time-btn {
     font-size: 20px;
     color: #ffffff;
-    background-color: #007bff00;
+    background-color: #b5b5b500;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
-#time-btn.active {
+.time-btn.active {
     color: #ffffff;
     font-weight: bold;
-    background-color: #007bff00;
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.313);
+    background-color: #E09628;
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.313);
 }
 
 .filter-btn.active {

@@ -38,45 +38,45 @@ const recipes = [
     },
     { 
         url: 'https://www.townsends.us/blogs/blog/simple-apple-pudding', 
-        image: 'images/plov-student-edition.jpg', 
+        image: 'images/simple-apple-pudding.jpg', 
         title: 'Simple Apple Pudding',
         description: 'Just an apple and some flour or dough needed.',
         ingredients: ['apple', 'flour', 'oven'], 
         time: 20,
     },
-    { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', 
-        image: 'images/18th-ct-cheese-soup.jpg', 
-        title: '18th Century Cheese Soup',
-        description: 'A wholsome historical recipe using just bread and cheese.',
-        ingredients: ['cheese', 'bread', 'pot'], 
+    { url: 'https://www.justlikegranny.com/home/raggmunk-swedish-potato-pancakes', 
+        image: 'images/raggmunk.jpg', 
+        title: 'Raggmunk',
+        description: 'Swedish potato pancakes, bacon, eggs, and jam optional.',
+        ingredients: ['potatoes', 'bacon', 'pan', 'oven', 'microwave'], 
         time: 25
     },
-    { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', 
-        image: 'images/7-ways-instantnoodles.jpg', 
-        title: '7 Ways to Cook Instant Noodles',
-        description: '7 ways to cook instant noodles, contains some comedic exaggeration.',
-        ingredients: ['instant noodels', 'pan'], 
-        time: 5
+    { url: 'https://flolum.com/yangzhou-fried-rice/', 
+        image: 'images/yangzhou-fried-rice.jpg', 
+        title: 'Yangzhou Fried Rice',
+        description: 'Quick and easy fried rice, wok or pan, your choice.',
+        ingredients: ['rice', 'pan', 'wok', 'rice', 'ham', 'soysauce'], 
+        time: 15
     },
-    { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', 
-       image: 'images/tuna-instantnoodles.jpg',
-       title: 'Tuna Noodles',
-       description: 'Just a microwave needed to bring a twist to instant noodles.',
-       ingredients: ['instantnoodles', 'tuna', 'microwave'], 
-       time: 5
+    { url: 'https://www.youtube.com/watchttps://www.marionskitchen.com/cantonese-beef-chow-fun-noodles/h?v=iH_K-VbGvVI', 
+       image: 'images/Cantonese-Beef-Fried-Noodles.jpg',
+       title: 'Cantonese Styled Fried Noodles',
+       description: 'A cantonese staple, brown perfection',
+       ingredients: ['rice noodles', 'beef', 'pan', 'wok', 'soysauce', 'oystersauce'], 
+       time: 25
     },
-    { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', 
-       image: 'images/stragonoff.jpg', 
-       title: 'Stragonoff',
-       description: 'Russian sauteed beef with mushrooms, cheese, and pickles.',
-       ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms', 'pan'], 
+    { url: 'https://www.youtube.com/watch?v=2s7zK07dODw', 
+       image: 'images/bowl-of-fragrance.jpg', 
+       title: 'A Bowl of Fragrance', 
+       description: 'This Chinese magic does not even have a generally accepted English name, that is how local it is. Make it, it is easy and it is good for you.',
+       ingredients: ['pork', 'pan', 'chilis', 'woodears', 'wok', 'pan', 'garlic'], 
        time: 20
     },
 ]
 
 // Get filter buttons and recipe list container
 const filterButtons = document.querySelectorAll('.filter-btn');
-const timeFilterButtons = document.querySelectorAll('.time-filters .filter-btn');
+const timeFilterButtons = document.querySelectorAll('.time-filters');
 const recipesList = document.getElementById('recipes-list');
 const utensilFilterButtons = document.querySelectorAll('.utensil-filter');
 
