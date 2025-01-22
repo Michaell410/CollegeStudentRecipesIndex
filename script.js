@@ -122,18 +122,22 @@ function updateRecipeList() {
 function buttonCloseStart() {
     var x = document.getElementById("ingredient-box");
     var y = document.getElementById("utensil-box");
+    var z = document.getElementById("time-box");
     y.style.display = "none";
     x.style.display = "none";
+    z.style.display = "none";
 }
 
 function ingredientFunction() {
     var x = document.getElementById("ingredient-box");
     var y = document.getElementById("utensil-box");
-    if (y.style.display === "none" && x.style.display === "none") {
+    var z = document.getElementById("time-box");
+    if (x.style.display === "none" && y.style.display === "none" && z.style.display === "none") {
         x.style.display = "block";
-      } else if (y.style.display === "block") {
+      } else if (y.style.display === "block" || z.style.display === "block") {
         x.style.display = "block";
         y.style.display = "none";
+        z.style.display = "none";
       } else if (x.style.display === "block") {
         x.style.display = "none";
       } else {
@@ -144,15 +148,34 @@ function ingredientFunction() {
 function utensilFunction() {
     var x = document.getElementById("ingredient-box");
     var y = document.getElementById("utensil-box");
-    if (x.style.display === "none" && y.style.display === "none") {
+    var z = document.getElementById("time-box");
+    if (x.style.display === "none" && y.style.display === "none" && z.style.display === "none") {
       y.style.display = "block";
-    } else if (x.style.display === "block") {
+    } else if (x.style.display === "block" || z.style.display === "block") {
       y.style.display = "block";
       x.style.display = "none";
+      z.style.display = "none";
     } else if (y.style.display === "block") {
         y.style.display = "none";
       } else {
       y.style.display = "none";
+    }
+  }
+
+  function timeFunction() {
+    var x = document.getElementById("ingredient-box");
+    var y = document.getElementById("utensil-box");
+    var z = document.getElementById("time-box");
+    if (x.style.display === "none" && y.style.display === "none" && z.style.display === "none") {
+      z.style.display = "block";
+    } else if (x.style.display === "block"  || y.style.display === "block") {
+      z.style.display = "block";
+      x.style.display = "none";
+      y.style.display = "none";
+    } else if (y.style.display === "block") {
+        z.style.display = "none";
+      } else {
+      z.style.display = "none";
     }
   }
 

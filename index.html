@@ -8,15 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Surprise Me!</h1>
+        <h1 class="title">Search</h1>
 
+<div class = "bottom-bar">
     <div class = "selector-btn-class">
-        <button class="selector-btn" onclick="ingredientFunction()">Include Ingredients</button>
-        <button class="selector-btn" onclick="utensilFunction()">Exclude Utensils</button>
+        <button class="selector-btn" onclick="ingredientFunction()"> Ingredients</button>
+        <button class="selector-btn" onclick="utensilFunction()"> Utensils</button>
+        <button class="selector-btn" onclick="timeFunction()"> Time </button>
     </div>
+</div>
 
         <!-- Ingredient filter buttons -->
         <div class="filters" id = 'ingredient-box'>
+            <h3>Include ingredients</h3>
             <button class="filter-btn" data-ingredient="eggs" id="protein-btn">Eggs</button>
             <button class="filter-btn" data-ingredient="beef" id="protein-btn">Beef</button>
             <button class="filter-btn" data-ingredient="chicken" id="protein-btn">Chicken</button>
@@ -41,9 +45,8 @@
 
         <!-- Utensils filter buttons -->
         <div class="utensil-filters" id = 'utensil-box'>
-            <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="pan">Pan</button>
-            <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="pot">Pot</button>
-            <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="wok">Wok</button>
+            <h3>Exclude utensils</h3>
+            <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="pan/wok">Pan/Wok</button>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="oven">Oven</button>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="microwave">Microwave</button>
         </div>
@@ -54,7 +57,8 @@
         </div>
 
         <!-- Time filter buttons -->
-        <div class="time-filters">
+        <div class="time-filters" id = 'time-box'>
+            <h3>Cooking time</h3>
             <button class="filter-btn time-btn" data-ingredient="5">5 Min</button>
             <button class="filter-btn time-btn" data-ingredient="10">10 Min</button>
             <button class="filter-btn time-btn" data-ingredient="15">15 Min</button>

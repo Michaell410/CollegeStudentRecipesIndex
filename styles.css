@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     color: #333;
 }
@@ -16,7 +16,7 @@ body {
     margin: 10px auto;
     padding: 20px;
     padding-bottom: 100px;
-    background-color: white;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
 }
@@ -29,27 +29,49 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    color: #4c3530;
+    font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 20px;
+    color: #4c3530;
+    font-size: 18px;
     margin: 10px;
     text-align: center;
 }
 
 h3 {
-    font-size: 20px;
+    font;
+    color: #4c3530;
+    font-size: 18px;
     text-align: left;
     margin: 10px;
 }
 
 p {
+    color: #4c3530;
     text-align: left;
     font-size: 16px;
     margin: 10px;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 20px; /* Position it slightly above the bottom for aesthetics */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 400px; /* Make the width fit the content */
+    height: auto; /* Adjust height to fit the buttons */
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    background-color: #da5c08db; /* Background color for the bar */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 60px; /* Round the corners for a neat look */
+    padding: 20px; /* Add some spacing inside the bar */
+    z-index: 10; /* Ensure it stays on top of other content */
+    backdrop-filter: blur(3px);
 }
 
 .selector-btn-class {
@@ -58,76 +80,74 @@ p {
 }
 
 .selector-btn {
-    width: 49%;
-    padding: 10px;
-    color: white;
-    background-color: #dd6e42;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 20px;
-    margin: 0px;
-    text-align: center;
-    border-color: rgba(255, 255, 255, 0);
-    transition-property: color, font-weight, background-color;
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+    background-color: #b5b5b500;
+    padding: 12px 17px;
+    border-radius: 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition-property: color, background-color, box-shadow, margin, padding;
     transition-duration: .25s;
     transition-timing-function: ease-out;
 }
 
 .selector-btn:hover {
-    color: rgb(0, 0, 0);
-    background-color: #ffffff;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 20px;
-    margin: 0px;
-    text-align: center;
-    border-color: rgba(255, 255, 255, 0);
+    font-weight: bold;
+    padding: 11.5px 22px;
+}
+
+.selector-btn:active {
+    color: #ffffff;
+    background-color: #dd6e4200;
+    box-shadow: 0px 0px 0px 3px rgb(255, 104, 44);
+    border-radius: 50px;
 }
 
 .filters {
-    width: 100%;
-    height: 10%;
+    position: fixed;
+    bottom: 120px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 400px;
+    height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #dd6e4200;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
     padding: 20px;
-    padding-top: 10px;
 }
 
 .utensil-filters{
-    width: 100%;
-    height: 10%;
+    position: fixed;
+    bottom: 120px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 400px;
+    height: auto;
+    margin: 0px;
     z-index: 10;
-    background-color: #dd6e4200;
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;    
     padding: 20px;
-    padding-top: 10px;
 }
 
 .time-filters{
     position: fixed;
-    bottom: 20px; /* Position it slightly above the bottom for aesthetics */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    width: auto; /* Make the width fit the content */
-    height: auto; /* Adjust height to fit the buttons */
-    display: flex;
-    justify-content: center; /* Center the buttons */
-    background-color: #5b5b5bb9; /* Background color for the bar */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    border-radius: 60px; /* Round the corners for a neat look */
-    padding: 15px; /* Add some spacing inside the bar */
-    z-index: 10; /* Ensure it stays on top of other content */
-    backdrop-filter: blur(3px);
+    bottom: 120px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 400px;
+    height: auto;
+    margin: 0px;
+    z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 20px;
 }
 
 .filter-btn {
@@ -139,17 +159,58 @@ p {
     margin: 3px;
     cursor: pointer;
     border-radius: 30px;
-    transition-property: font-weight, padding, margin;
+    transition-property: font-weight, padding, margin, border;
     transition-duration: 0.25s;
     transition-timing-function: ease-out;
 }
 
 .filter-btn:hover {
     font-weight: bold;
-    padding: 11.5px 22px;
+    /*box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.409);*/
+    background-color: #dd6e42;
+    border: #dd6e42;
+    padding: 12px 20px;
+    margin: 3px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-.filter-btn:hover::after {
+.filter-btn.active {
+    /*box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.409);*/
+    background-color: #dd6e42;
+    border: #dd6e42;
+}
+
+/*.filter-btn:hover {
+    transform: scale(1.1);
+    padding: 11.5px 22px;
+}*/
+
+.time-btn {
+    font-size: 16px;
+    background-color: #b5b5b5;
+    color: white;
+    border: 5px solid #dd6e4200;
+    padding: 12px 17px;
+    margin: 3px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition-property: font-weight, padding, margin, border, background-color, color, border;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.time-btn:hover {
+    background-color: #ffffff;
+    color: #4c3530;
+    border: 5px solid #dd6e42;
+    padding: 12px 20px;
+    margin: 3px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/*.filter-btn:hover::after {
     content: '';
     position: absolute;
     height: 20px;
@@ -157,13 +218,7 @@ p {
     left: 0;
     right: 0;
     top: 100%;
-  }
-
-.filter-btn.active {
-    font-weight: bold;
-    /*box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.409);*/
-    background-color: #dd6e42;
-}
+  }*/
 
 /* Specific colors for each filter when active */
 #protein-btn.active {
@@ -198,30 +253,20 @@ p {
     background-color: #b5b5b5;
 }
 
-
-.time-btn {
-    font-size: 16px;
-    color: #ffffff80;
-    background-color: #b5b5b500;
-    padding: 12px 17px;
-    border-radius: 15px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition-property: color, background-color, box-shadow, margin, padding;
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
-}
-
-.time-btn:hover {
-    font-weight: bold;
-    padding: 11.5px 22px;
-}
-
 .time-btn.active {
-    color: #ffffff;
-    background-color: #dd6e4200;
-    box-shadow: 0px 0px 0px 3px rgb(255, 104, 44);
-    border-radius: 50px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #4c3530;
+    border: 5px solid #dd6e42;
+    padding: 12px 20px;
+    margin: 3px;
+    margin-left: 0px;
+    margin-right: 0px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition-property: font-weight, padding, margin, border;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
 }
 
 .recipes-list {
@@ -233,7 +278,7 @@ p {
     justify-content: flex-start;
     padding: 10px;
     margin: 5px 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 50px;
 }
@@ -248,7 +293,7 @@ p {
 .recipe-item a {
     text-decoration: none;
     font-size: 15px;
-    color: #007BFF;
+    color: #51a007;
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
