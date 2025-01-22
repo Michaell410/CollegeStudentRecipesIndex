@@ -86,7 +86,7 @@ const recipes = [
      { url: 'https://iwashyoudry.com/super-easy-swedish-meatballs/', 
         image: 'images/swedish-meatballs.jpg', 
         title: 'Easy Swedish Meatballs', 
-        description: 'You know what this is',
+        description: 'You know what this is.',
         ingredients: ['pork', 'pan', 'beef', 'milk'], 
         time: 20,
      },   
