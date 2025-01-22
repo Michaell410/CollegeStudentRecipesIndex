@@ -1,3 +1,7 @@
+window.onload = function() {
+    buttonCloseStart(); 
+  }
+  
 // Array of recipes with URLs and ingredients
 const recipes = [
     { 
@@ -94,22 +98,32 @@ function updateRecipeList() {
     console.log('Excluded Utensils:', excludedUtensils);
     console.log('Max Cooking Time:', maxCookingTime);
 
-    // Filter recipes based on active ingredients and max cooking time
+    // Filter recipes
     const filteredRecipes = recipes.filter(recipe => {
-        const matchesIngredients = ingredientFilters.every(filter =>
-            recipe.ingredients.includes(filter)
-        );
+        const matchesIngredients =
+            ingredientFilters.length === 0 || // If no ingredients are selected, include all recipes
+            ingredientFilters.some(filter => recipe.ingredients.includes(filter));
+
         const excludesUtensils = excludedUtensils.every(utensil =>
             !recipe.ingredients.includes(utensil)
         );
         const matchesTime = recipe.time <= maxCookingTime;
 
-        console.log( `Recipe: ${recipe.title}, Matches Ingredients: ${matchesIngredients}, Excludes Utensils: ${excludesUtensils}, Matches Time: ${matchesTime}`);
+        console.log(
+            `Recipe: ${recipe.title}, Matches Ingredients: ${matchesIngredients}, Excludes Utensils: ${excludesUtensils}, Matches Time: ${matchesTime}`
+        );
 
         return matchesIngredients && excludesUtensils && matchesTime;
     });
 
     displayRecipes(filteredRecipes);
+}
+
+function buttonCloseStart() {
+    var x = document.getElementById("ingredient-box");
+    var y = document.getElementById("utensil-box");
+    y.style.display = "none";
+    x.style.display = "none";
 }
 
 function ingredientFunction() {
