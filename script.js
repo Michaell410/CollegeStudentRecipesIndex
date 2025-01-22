@@ -82,7 +82,14 @@ const recipes = [
         description: 'Pork, Jallepenos, garlic necessary.',
         ingredients: ['pork', 'pan', 'chillies', 'wok', 'pan', 'garlic', 'soysauce'], 
         time: 20,
-     },    
+     },   
+     { url: 'https://iwashyoudry.com/super-easy-swedish-meatballs/', 
+        image: 'images/swedish-meatballs.jpg', 
+        title: 'Easy Swedish Meatballs', 
+        description: 'You know what this is',
+        ingredients: ['pork', 'pan', 'beef', 'milk'], 
+        time: 20,
+     },   
 ]
 
 // Get filter buttons and recipe list container
