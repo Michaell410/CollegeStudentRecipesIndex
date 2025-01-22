@@ -114,19 +114,31 @@ function updateRecipeList() {
 
 function ingredientFunction() {
     var x = document.getElementById("ingredient-box");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+    var y = document.getElementById("utensil-box");
+    if (y.style.display === "none" && x.style.display === "none") {
+        x.style.display = "block";
+      } else if (y.style.display === "block") {
+        x.style.display = "block";
+        y.style.display = "none";
+      } else if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "none";
+      }
   }
 
 function utensilFunction() {
-    var x = document.getElementById("utensil-box");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
+    var x = document.getElementById("ingredient-box");
+    var y = document.getElementById("utensil-box");
+    if (x.style.display === "none" && y.style.display === "none") {
+      y.style.display = "block";
+    } else if (x.style.display === "block") {
+      y.style.display = "block";
       x.style.display = "none";
+    } else if (y.style.display === "block") {
+        y.style.display = "none";
+      } else {
+      y.style.display = "none";
     }
   }
 
