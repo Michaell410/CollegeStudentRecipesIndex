@@ -8,13 +8,15 @@ const recipes = [
         url: 'https://www.youtube.com/watch?v=MbdQzjaevXQ&list=PLbS0HkS8Xsoq1j4kiZFLP9w1e3pQADR3g&index=3', 
         image: 'images/plov-student-edition.jpg', 
         title: 'Plov Student Edition',
-        description: 'Rice, meat, and vegetables all steamed in one pot. Nice and easy.',
+        necessities: 'Required: Rice, Meat or Vegetables.',
+        description: 'Rice, Meat or Vegetables necessary, all steamed in one pot',
         ingredients: ['pot', 'pan', 'wok', 'oven', 'microwave', 'rice', 'beef', 'carrots', 'garlic', 'onions'], 
         time: 25,
     },
     { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', 
         image: 'images/18th-ct-cheese-soup.jpg', 
         title: '18th Century Cheese Soup',
+        necessities: 'Required: Bread and Cheese.',
         description: 'A wholsome historical recipe using just bread and cheese.',
         ingredients: ['cheese', 'bread', 'pot', 'pan'], 
         time: 25,
@@ -22,6 +24,7 @@ const recipes = [
     { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', 
         image: 'images/7-ways-instantnoodles.jpg', 
         title: '7 Ways to Cook Instant Noodles',
+        necessities: 'Required: Instant Noodles.',
         description: '7 ways to cook instant noodles, contains some comedic exaggeration.',
         ingredients: ['instant noodels', 'pan'], 
         time: 5,
@@ -29,14 +32,16 @@ const recipes = [
     { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', 
        image: 'images/tuna-instantnoodles.jpg',
        title: 'Tuna Noodles',
-       description: 'Just a microwave needed to bring a twist to instant noodles.',
+       necessities: 'Required: Microwave and Tuna',
+       description: 'Bring a twist to instant noodles.',
        ingredients: ['instantnoodles', 'tuna', 'microwave'], 
        time: 5,
     },
     { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', 
        image: 'images/stragonoff.jpg', 
        title: 'Stragonoff',
-       description: 'Russian sauteed beef with mushrooms, cheese, and pickles.',
+       necessities: 'Beef, mushroomms, and cheese necessary',
+       description: 'Russian Sauteed beef dish.',
        ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms', 'pan', 'pot'], 
        time: 20,
     },
@@ -44,6 +49,7 @@ const recipes = [
         url: 'https://www.townsends.us/blogs/blog/simple-apple-pudding', 
         image: 'images/simple-apple-pudding.jpg', 
         title: 'Simple Apple Pudding',
+        necessities: 'Required: Apples and Dough',
         description: 'Just an apple and some flour or dough needed.',
         ingredients: ['apple', 'flour', 'oven'], 
         time: 20,
@@ -51,13 +57,15 @@ const recipes = [
     { url: 'https://www.justlikegranny.com/home/raggmunk-swedish-potato-pancakes', 
         image: 'images/raggmunk.jpg', 
         title: 'Raggmunk',
-        description: 'Swedish potato pancakes, bacon, eggs, and jam optional.',
+        necessities: 'Required: Potatoes, Pan and Oil necessary',
+        description: 'Swedish potato pancakes: bacon, eggs, and jam optional.',
         ingredients: ['potatoes', 'bacon', 'pan', 'oven', 'microwave'], 
         time: 25,
     },
     { url: 'https://flolum.com/yangzhou-fried-rice/', 
         image: 'images/yangzhou-fried-rice.jpg', 
         title: 'Yangzhou Fried Rice',
+        necessities: 'Required: Rice and Eggs.',
         description: 'Quick and easy fried rice, wok or pan, your choice.',
         ingredients: ['rice', 'eggs', 'pan', 'wok', 'rice', 'ham', 'soysauce'], 
         time: 15,
@@ -65,6 +73,7 @@ const recipes = [
     { url: 'https://www.youtube.com/watchttps://www.marionskitchen.com/cantonese-beef-chow-fun-noodles/h?v=iH_K-VbGvVI', 
        image: 'images/Cantonese-Beef-Fried-Noodles.jpg',
        title: 'Cantonese Styled Fried Noodles',
+       necessities: 'Required: Rice Noodles, Soy Sauce.',
        description: 'A cantonese staple, brown perfection.',
        ingredients: ['rice noodles', 'beef', 'pan', 'wok', 'soysauce', 'oystersauce'], 
        time: 25,
@@ -72,6 +81,7 @@ const recipes = [
     { url: 'https://www.youtube.com/watch?v=2s7zK07dODw', 
        image: 'images/bowl-of-fragrance.jpg', 
        title: 'A Bowl of Fragrance', 
+       necessities: 'Required: Eggs, Chillies.',
        description: 'This Chinese magic does not even have a generally accepted English name, that is how local it is. Make it.',
        ingredients: ['egg', 'pan', 'chillies', 'woodears', 'wok', 'pan', 'garlic'], 
        time: 20,
@@ -79,6 +89,7 @@ const recipes = [
     { url: 'https://fun-chinese-cooking.blogspot.com/2014/11/hunan-style-stir-fried-pork-slices-with.html', 
         image: 'images/hunan-fried-pork.jpg', 
         title: 'Hunan Sitr Fried Pork', 
+        necessities: 'Required: Pork, Chillies, Garlic.',
         description: 'Pork, Jallepenos, garlic necessary.',
         ingredients: ['pork', 'pan', 'chillies', 'wok', 'pan', 'garlic', 'soysauce'], 
         time: 20,
@@ -86,8 +97,17 @@ const recipes = [
      { url: 'https://iwashyoudry.com/super-easy-swedish-meatballs/', 
         image: 'images/swedish-meatballs.jpg', 
         title: 'Easy Swedish Meatballs', 
+        necessities: 'Required: Pork or Beef, Pan, Milk.',
         description: 'You know what this is.',
         ingredients: ['pork', 'pan', 'beef', 'milk'], 
+        time: 20,
+     },   
+     { url: 'https://www.food.com/recipe/dill-pickle-ham-pinwheels-ham-rollups-64399', 
+        image: 'images/pickle-pinwheel.jpg', 
+        title: 'Pickle Pinwheel', 
+        necessities: 'Required: Tortillas, Pickles, Cream Cheese.',
+        description: 'Tortillas and pickles necessary for this highly sharable dish.',
+        ingredients: ['ham', 'tortillas', 'pickles', 'cream-chease'], 
         time: 20,
      },   
 ]
@@ -224,6 +244,10 @@ function displayRecipes(recipes) {
         recipeDescription.textContent = recipe.description;
         recipeDescription.classList.add('recipe-description');
 
+        const recipeNecessities = document.createElement('h5');
+        recipeNecessities.textContent = recipe.necessities;
+        recipeNecessities.classList.add('recipe-necessities');
+
         // Create a link to the recipe
         const recipeLink = document.createElement('a');
         recipeLink.href = recipe.url;
@@ -232,6 +256,7 @@ function displayRecipes(recipes) {
 
         // Append details and link to the details container
         recipeDetails.appendChild(recipeTitle);
+        recipeDetails.appendChild(recipeNecessities); 
         recipeDetails.appendChild(recipeDescription);
         recipeDetails.appendChild(recipeLink);
         

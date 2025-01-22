@@ -53,6 +53,20 @@ h3 {
     margin: 10px;
 }
 
+h5 {
+    font-size: 16px;
+    background-color: #b5b5b5;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition-property: font-weight, padding, margin, border;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
 p {
     color: #4c3530;
     text-align: left;
