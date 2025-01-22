@@ -69,7 +69,7 @@ const recipes = [
        image: 'images/bowl-of-fragrance.jpg', 
        title: 'A Bowl of Fragrance', 
        description: 'This Chinese magic does not even have a generally accepted English name, that is how local it is. Make it, it is easy and it is good for you.',
-       ingredients: ['pork', 'pan', 'chilis', 'woodears', 'wok', 'pan', 'garlic'], 
+       ingredients: ['pork', 'pan', 'chillies', 'woodears', 'wok', 'pan', 'garlic'], 
        time: 20,
     },
 ]
@@ -112,12 +112,30 @@ function updateRecipeList() {
     displayRecipes(filteredRecipes);
 }
 
+function ingredientFunction() {
+    var x = document.getElementById("ingredient-box");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+function utensilFunction() {
+    var x = document.getElementById("utensil-box");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
 // Function to display the recipes with thumbnails
 function displayRecipes(recipes) {
     recipesList.innerHTML = '';
     
     if (recipes.length === 0) {
-        recipesList.innerHTML = '<p>Sorry, no recipes found, try changing the ingredients, utensils, or cooking time :).</p>';
+        recipesList.innerHTML = '<p><br>Sorry, no recipes found, try changing the ingredients, utensils, or cooking time :).</p>';
         return;
     }
     

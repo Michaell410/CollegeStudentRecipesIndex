@@ -8,12 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>Surprise Me!</h1>
-        
-        <h2>Ingredients</h2>
+        <h1 class="title">Surprise Me!</h1>
+
+        <button class="selector-btn" onclick="ingredientFunction()">Include Ingredients</button>
+        <button class="selector-btn" onclick="utensilFunction()">Exclude Utensils</button>
 
         <!-- Ingredient filter buttons -->
-        <div class="filters">
+        <div class="filters" id = 'ingredient-box'>
             <button class="filter-btn" data-ingredient="eggs" id="protein-btn">Eggs</button>
             <button class="filter-btn" data-ingredient="beef" id="protein-btn">Beef</button>
             <button class="filter-btn" data-ingredient="chicken" id="protein-btn">Chicken</button>
@@ -22,7 +23,7 @@
             <button class="filter-btn" data-ingredient="ham" id="protein-btn">Ham</button>           
             <button class="filter-btn" data-ingredient="onions" id="fiber-btn">Onions</button>
             <button class="filter-btn" data-ingredient="chillies" id="fiber-btn">Chillies</button>            
-            <button class="filter-btn" data-ingredient="Garlic" id="fiber-btn">Garlic</button>            
+            <button class="filter-btn" data-ingredient="garlic" id="fiber-btn">Garlic</button>            
             <button class="filter-btn" data-ingredient="carrots" id="fiber-btn">Carrots</button>
             <button class="filter-btn" data-ingredient="mushrooms" id="fiber-btn">Mushrooms</button>
             <button class="filter-btn" data-ingredient="mushrooms" id="fiber-btn">Wood ear mushrooms</button>            
@@ -35,10 +36,9 @@
             <button class="filter-btn" data-ingredient="msg" id="sauce-btn">MSG</button>                   
         </div>
 
-        <h2>Utensils</h2>
 
         <!-- Utensils filter buttons -->
-        <div class="utensil-filters">
+        <div class="utensil-filters" id = 'utensil-box'>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="pan">Pan</button>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="pot">Pot</button>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="wok">Wok</button>
