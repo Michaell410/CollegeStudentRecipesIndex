@@ -73,7 +73,7 @@ const recipes = [
        image: 'images/bowl-of-fragrance.jpg', 
        title: 'A Bowl of Fragrance', 
        description: 'This Chinese magic does not even have a generally accepted English name, that is how local it is. Make it.',
-       ingredients: ['pork', 'pan', 'chillies', 'woodears', 'wok', 'pan', 'garlic'], 
+       ingredients: ['egg', 'pan', 'chillies', 'woodears', 'wok', 'pan', 'garlic'], 
        time: 20,
     },
     { url: 'https://fun-chinese-cooking.blogspot.com/2014/11/hunan-style-stir-fried-pork-slices-with.html', 
