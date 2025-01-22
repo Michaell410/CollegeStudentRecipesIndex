@@ -23,7 +23,8 @@ body {
 
 .title {
     color: #4c3530;
-    padding: 20px;
+    padding: 17px;
+    padding-left: 27px;
     background-color: rgb(231, 231, 231);
     border: 2px Solid #ff804e;
     border-radius: 50px;
