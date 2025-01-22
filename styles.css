@@ -22,16 +22,18 @@ body {
 }
 
 .title {
-    color: #ffffff;
-    padding: 15px;
-    background-color: #DD6E42;
+    color: #4c3530;
+    padding: 20px;
+    background-color: rgb(231, 231, 231);
+    border: 2px Solid #ff804e;
     border-radius: 50px;
 }
 
 h1 {
+    font-weight: normal;
     color: #4c3530;
-    font-size: 20px;
-    text-align: center;
+    font-size: 18px;
+    text-align: left;
     margin-bottom: 20px;
 }
 
