@@ -46,7 +46,7 @@ h2 {
 }
 
 h3 {
-    font;
+    font: 16px;
     color: #4c3530;
     font-size: 18px;
     text-align: left;
@@ -79,14 +79,16 @@ p {
     bottom: 20px; /* Position it slightly above the bottom for aesthetics */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
-    width: 400px; /* Make the width fit the content */
+    width: 450px; /* Make the width fit the content */
     height: auto; /* Adjust height to fit the buttons */
     display: flex;
     justify-content: center; /* Center the buttons */
     background-color: #da5c08db; /* Background color for the bar */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     border-radius: 60px; /* Round the corners for a neat look */
-    padding: 20px; /* Add some spacing inside the bar */
+    padding: 10px; /* Add some spacing inside the bar */
+    padding-left: 20px;
+    padding-right: 20px;
     z-index: 10; /* Ensure it stays on top of other content */
     backdrop-filter: blur(3px);
 }
@@ -94,6 +96,12 @@ p {
 .selector-btn-class {
     display: flex;
     justify-content: space-between;
+}
+
+.selector-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
 }
 
 .selector-btn {
