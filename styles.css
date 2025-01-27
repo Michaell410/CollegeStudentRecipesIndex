@@ -8,6 +8,42 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     color: #333;
+    background-color: #A7CC81;
+}
+
+.top-bar {
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 60px;
+    background-color: #da5c08; 
+    padding: 0 20px;
+    z-index: 1000; 
+    color: white;
+    border-radius: 60px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin: 10px;
+}
+
+
+.brand-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 10px;
 }
 
 .container {
@@ -56,15 +92,12 @@ h3 {
 h5 {
     font-size: 16px;
     background-color: #b5b5b5;
+    width: max-content;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     margin: 10px;
-    cursor: pointer;
     border-radius: 30px;
-    transition-property: font-weight, padding, margin, border;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-out;
 }
 
 p {
@@ -132,7 +165,7 @@ p {
 
 .filters {
     position: fixed;
-    bottom: 120px; 
+    bottom: 150px; 
     left: 50%; 
     transform: translateX(-50%);
     width: 400px;
@@ -147,7 +180,7 @@ p {
 
 .utensil-filters{
     position: fixed;
-    bottom: 120px; 
+    bottom: 150px; 
     left: 50%; 
     transform: translateX(-50%);
     width: 400px;
@@ -162,7 +195,7 @@ p {
 
 .time-filters{
     position: fixed;
-    bottom: 120px; 
+    bottom: 150px; 
     left: 50%; 
     transform: translateX(-50%);
     width: 400px;
