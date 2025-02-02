@@ -8,8 +8,9 @@ const recipes = [
         url: 'https://www.youtube.com/watch?v=MbdQzjaevXQ&list=PLbS0HkS8Xsoq1j4kiZFLP9w1e3pQADR3g&index=3', 
         image: 'images/plov-student-edition.jpg', 
         title: 'Plov Student Edition',
+        author: 'Boris',
         necessities: 'Required: Rice, Meat or Vegetables.',
-        description: 'Rice, Meat or Vegetables necessary, all steamed in one pot',
+        /*description: 'Rice, Meat or Vegetables necessary, all steamed in one pot',*/
         ingredients: ['pot', 'pan', 'wok', 'oven', 'microwave', 'rice', 'beef', 'carrots', 'garlic', 'onions'], 
         time: 25,
     },
@@ -17,7 +18,7 @@ const recipes = [
         image: 'images/18th-ct-cheese-soup.jpg', 
         title: '18th Century Cheese Soup',
         necessities: 'Required: Bread and Cheese.',
-        description: 'A wholsome historical recipe using just bread and cheese.',
+        /*description: 'A wholsome historical recipe using just bread and cheese.',*/
         ingredients: ['cheese', 'bread', 'pot', 'pan'], 
         time: 25,
     },
@@ -25,7 +26,7 @@ const recipes = [
         image: 'images/7-ways-instantnoodles.jpg', 
         title: '7 Ways to Cook Instant Noodles',
         necessities: 'Required: Instant Noodles.',
-        description: '7 ways to cook instant noodles, contains some comedic exaggeration.',
+        /*description: '7 ways to cook instant noodles, contains some comedic exaggeration.',*/
         ingredients: ['instant noodels', 'pan'], 
         time: 5,
     },
@@ -33,7 +34,7 @@ const recipes = [
        image: 'images/tuna-instantnoodles.jpg',
        title: 'Tuna Noodles',
        necessities: 'Required: Microwave and Tuna',
-       description: 'Bring a twist to instant noodles.',
+       /*description: 'Bring a twist to instant noodles.',*/
        ingredients: ['instantnoodles', 'tuna', 'microwave'], 
        time: 5,
     },
@@ -321,6 +322,7 @@ function utensilFunction() {
 
 // Function to display the recipes with thumbnails
 function displayRecipes(recipes) {
+    const recipesList = document.getElementById('recipes-list');
     recipesList.innerHTML = '';
     
     if (recipes.length === 0) {
@@ -332,6 +334,12 @@ function displayRecipes(recipes) {
         const recipeItem = document.createElement('div');
         recipeItem.classList.add('recipe-item');
 
+        // Create a clickable link wrapper
+        const recipeLink = document.createElement('a');
+        recipeLink.href = recipe.url;
+        recipeLink.classList.add('recipe-link');
+        recipeLink.target = "_blank"; // Opens in new tab
+
         //Create an image element for the thumbnail
         const recipeImage = document.createElement('img');
         recipeImage.src = recipe.image;
@@ -339,39 +347,57 @@ function displayRecipes(recipes) {
         recipeImage.classList.add('recipe-thumbnail');
 
         //Create an image element for the thumbnail
-        const recipeDetails = document.createElement('div');
-        recipeDetails.classList.add('recipe-details')
+        //const recipeDetails = document.createElement('div');
+        //recipeDetails.classList.add('recipe-details')
 
+        // Create the clickable recipe title inside the link
         const recipeTitle = document.createElement('h3');
         recipeTitle.textContent = recipe.title;
         recipeTitle.classList.add('recipe-title');
 
-        const recipeDescription = document.createElement('p');
-        recipeDescription.textContent = recipe.description;
-        recipeDescription.classList.add('recipe-description');
+        // Create an element for the Author
+        const recipeAuthor = document.createElement('h4')
+        recipeTable.textContent = recipe.author;
+        recipeAuthor.classList.add('recipe-author');
 
-        const recipeNecessities = document.createElement('h5');
-        recipeNecessities.textContent = recipe.necessities;
-        recipeNecessities.classList.add('recipe-necessities');
+
+        //const recipeDescription = document.createElement('p');
+        //recipeDescription.textContent = recipe.description;
+        //recipeDescription.classList.add('recipe-description');
+
+        //const recipeNecessities = document.createElement('h5');
+        //recipeNecessities.textContent = recipe.necessities;
+        //recipeNecessities.classList.add('recipe-necessities');
+
+        // Append image and title inside the clickable link
+        recipeLink.appendChild(recipeImage);
+        recipeLink.appendChild(recipeTitle);
+
+        // Append the clickable link inside the recipe box
+        recipeItem.appendChild(recipeLink);
+
+        // Add the recipe box to the list
+        recipesList.appendChild(recipeItem);
+        
 
         // Create a link to the recipe
-        const recipeLink = document.createElement('a');
-        recipeLink.href = recipe.url;
-        recipeLink.textContent = `View Recipe`;
-        recipeLink.classList.add('recipe-link');
+        //const recipeLink = document.createElement('a');
+        //recipeLink.href = recipe.url;
+        //recipeLink.textContent = `View Recipe`;
+        //recipeLink.classList.add('recipe-link');
 
         // Append details and link to the details container
-        recipeDetails.appendChild(recipeTitle);
-        recipeDetails.appendChild(recipeNecessities); 
-        recipeDetails.appendChild(recipeDescription);
-        recipeDetails.appendChild(recipeLink);
+        //recipeDetails.appendChild(recipeTitle);
+        //recipeDetails.appendChild(recipeNecessities); 
+        //recipeDetails.appendChild(recipeDescription);
+        //recipeDetails.appendChild(recipeLink);
         
         // Append image and link to the recipe item
-        recipeItem.appendChild(recipeImage);
+        //recipeItem.appendChild(recipeImage);
         //recipeItem.appendChild(recipeLink);
-        recipeItem.appendChild(recipeDetails);
+        //recipeItem.appendChild(recipeDetails);
         
-        recipesList.appendChild(recipeItem);
+        //recipesList.appendChild(recipeItem);
     });
 }
 
