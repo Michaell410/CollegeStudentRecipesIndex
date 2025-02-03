@@ -9,88 +9,98 @@ const recipes = [
         image: 'images/plov-student-edition.jpg', 
         title: 'Plov Student Edition',
         author: 'Boris',
-        necessities: 'Required: Rice, Meat or Vegetables.',
+        necessities: ['Rice', 'Meat', 'Vegetables', 'Pot'],
         /*description: 'Rice, Meat or Vegetables necessary, all steamed in one pot',*/
-        ingredients: ['pot', 'pan', 'wok', 'oven', 'microwave', 'rice', 'beef', 'carrots', 'garlic', 'onions'], 
+        ingredients: ['Rice', 'Beef', 'Carrots', 'Garlic', 'Onions', 'Pot', 'Pan/Wok', ], 
         time: 25,
     },
     { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', 
         image: 'images/18th-ct-cheese-soup.jpg', 
-        title: '18th Century Cheese Soup',
-        necessities: 'Required: Bread and Cheese.',
+        title: 'An 18th Century Cheese Soup',
+        author: 'Townsends',
+        necessities: ['Bread', 'Cheese.'],
         /*description: 'A wholsome historical recipe using just bread and cheese.',*/
-        ingredients: ['cheese', 'bread', 'pot', 'pan'], 
+        ingredients: ['Cheese', 'Bread', 'Pot', 'Pan/Wok'], 
         time: 25,
     },
     { url: 'https://www.youtube.com/watch?v=9X8VJvoo6y0', 
         image: 'images/7-ways-instantnoodles.jpg', 
         title: '7 Ways to Cook Instant Noodles',
-        necessities: 'Required: Instant Noodles.',
+        author: 'Boris',
+        necessities: ['Instant Noodles', 'Pan/Wok'],
         /*description: '7 ways to cook instant noodles, contains some comedic exaggeration.',*/
-        ingredients: ['instant noodels', 'pan'], 
+        ingredients: ['Instant Noodles', 'Pan/Wok'], 
         time: 5,
     },
     { url: 'https://www.allrecipes.com/recipe/138924/dorm-room-cheesy-tuna-and-noodles/', 
        image: 'images/tuna-instantnoodles.jpg',
        title: 'Tuna Noodles',
-       necessities: 'Required: Microwave and Tuna',
+       author: 'JCurphy',
+       necessities: ['Tuna', 'Microwave'],
        /*description: 'Bring a twist to instant noodles.',*/
-       ingredients: ['instantnoodles', 'tuna', 'microwave'], 
+       ingredients: ['Instant Noodles', 'Tuna', 'Microwave'], 
        time: 5,
     },
     { url: 'https://www.youtube.com/watch?v=hDybFLoOcGg', 
        image: 'images/stragonoff.jpg', 
-       title: 'Stragonoff',
-       necessities: 'Beef, mushroomms, and cheese.',
+       title: 'Easy Stragonoff',
+       author: 'Boris',
+       necessities: ['Beef', 'Mushroom', 'Cheese', 'Pan/Wok'],
        description: 'Russian Sauteed beef dish.',
-       ingredients: ['beef', 'cheese', 'bread', 'potatos', 'pickles', 'onions', 'mushrooms', 'pan', 'pot'], 
+       ingredients: ['Beef', 'Cheese', 'Bread', 'Potatos', 'Pickles', 'Onions', 'Mushrooms', 'Pan/Wok', 'Pot'], 
        time: 20,
     },
     { 
         url: 'https://www.townsends.us/blogs/blog/simple-apple-pudding', 
         image: 'images/simple-apple-pudding.jpg', 
-        title: 'Simple Apple Pudding',
-        necessities: 'Required: Apples and Dough',
+        title: 'The Simplest Apple Pudding Ever',
+        author: 'Townsends',
+        necessities: ['Apples', 'Dough', 'Oven'],
         description: 'Just an apple and some flour or dough needed.',
-        ingredients: ['apple', 'flour', 'oven'], 
+        ingredients: ['Apple', 'Flour', 'Oven'], 
         time: 20,
     },
     { url: 'https://www.justlikegranny.com/home/raggmunk-swedish-potato-pancakes', 
         image: 'images/raggmunk.jpg', 
-        title: 'Raggmunk',
-        necessities: 'Required: Potatoes, Pan, and Oil.',
+        title: 'Swedish Raggmunk',
+        author: 'Ashton',
+        necessities: ['Potatoes', 'Oil', 'Pan',],
         description: 'Swedish potato pancakes: bacon, eggs, and jam optional.',
-        ingredients: ['potatoes', 'bacon', 'pan', 'oven', 'microwave'], 
+        ingredients: ['Potatoes', 'Bacon', 'Pan', 'Oven', 'Microwave'], 
         time: 25,
     },
     { url: 'https://flolum.com/yangzhou-fried-rice/', 
         image: 'images/yangzhou-fried-rice.jpg', 
         title: 'Yangzhou Fried Rice',
-        necessities: 'Required: Rice and Eggs.',
+        author: 'Flo',
+        necessities: ['Rice', 'Eggs', 'Pan/Wok'],
         description: 'Quick and easy fried rice, wok or pan, your choice.',
-        ingredients: ['rice', 'eggs', 'pan', 'wok', 'rice', 'ham', 'soysauce'], 
+        ingredients: ['Rice', 'Eggs', 'Pan', 'Wok', 'Rice', 'Ham', 'Soysauce'], 
         time: 15,
     },
-    { url: 'https://www.youtube.com/watchttps://www.marionskitchen.com/cantonese-beef-chow-fun-noodles/h?v=iH_K-VbGvVI', 
+    { url: 'https://www.marionskitchen.com/cantonese-beef-chow-fun-noodles/h?v=iH_K-VbGvVI', 
        image: 'images/Cantonese-Beef-Fried-Noodles.jpg',
        title: 'Cantonese Styled Fried Noodles',
-       necessities: 'Required: Rice Noodles, Soy Sauce.',
+       author: 'Marion',
+       necessities: ['Rice', 'Noodles', 'Soy Sauce', 'Pan/Wok'],
        description: 'A cantonese staple, brown perfection.',
-       ingredients: ['rice noodles', 'beef', 'pan', 'wok', 'soysauce', 'oystersauce'], 
+       ingredients: ['Rice noodles', 'Beef', 'Pan/Wok', 'Soysauce', 'Oystersauce'], 
        time: 25,
     },
     { url: 'https://www.youtube.com/watch?v=2s7zK07dODw', 
        image: 'images/bowl-of-fragrance.jpg', 
        title: 'A Bowl of Fragrance', 
-       necessities: 'Required: Eggs, Chillies.',
+       author: '胡斌哥美食',
+       necessities: ['Eggs', 'Chillies', 'Soy Sauce', 'Pan/Wok'],
        description: 'This Chinese magic does not even have a generally accepted English name, that is how local it is. Make it.',
-       ingredients: ['egg', 'pan', 'chillies', 'woodears', 'wok', 'pan', 'garlic'], 
+       ingredients: ['Eggs', 'Soysauce', 'Chillies', 'Woodears', 'Pan/Wok', 'Garlic'], 
        time: 20,
     },
     { url: 'https://fun-chinese-cooking.blogspot.com/2014/11/hunan-style-stir-fried-pork-slices-with.html', 
         image: 'images/hunan-fried-pork.jpg', 
         title: 'Hunan Sitr Fried Pork', 
-        necessities: 'Required: Pork, Chillies, Garlic.',
+        author: 'Anon',
+        necessities: ['Pork', 'Chillies', 'Garlic', 'Pan/Wok'],
         description: 'Classic chillies and fried pork recipe from southern China.',
         ingredients: ['pork', 'pan', 'chillies', 'wok', 'pan', 'garlic', 'soysauce'], 
         time: 20,
@@ -98,26 +108,29 @@ const recipes = [
      { url: 'https://iwashyoudry.com/super-easy-swedish-meatballs/', 
         image: 'images/swedish-meatballs.jpg', 
         title: 'Easy Swedish Meatballs', 
-        necessities: 'Required: Pork or Beef, Pan, Milk.',
+        author: 'Shawn',
+        necessities: ['Pork', 'Beef', 'Milk', 'Pan/Wok'],
         description: 'You know what this is.',
-        ingredients: ['pork', 'pan', 'beef', 'milk'], 
+        ingredients: ['Pork', 'Beef', 'Milk', 'Pan'], 
         time: 20,
      },   
      { url: 'https://www.food.com/recipe/dill-pickle-ham-pinwheels-ham-rollups-64399', 
         image: 'images/pickle-pinwheel.jpg', 
         title: 'Pickle Pinwheel', 
-        necessities: 'Required: Tortillas, Pickles, Cream Cheese.',
+        author: 'Judikins',
+        necessities: ['Tortillas', 'Pickles', 'Cream Cheese', 'Pan/Wok'],
         description: 'Tortillas and pickles necessary for this highly sharable dish.',
-        ingredients: ['ham', 'tortillas', 'pickles', 'cream-chease'], 
+        ingredients: ['Ham', 'Tortillas', 'Pickles', 'Cream-cheese'], 
         time: 20,
      },   
      { 
         url: 'https://www.youtube.com/watch?v=x_e4kCtJIHA&list=PLbS0HkS8Xsorrdr3pPk4lP80tUAzfyxP1&index=19&t=2s', 
         image: 'images/potato-peel-recipes.jpg', 
         title: 'Potato Peel Recipes',
-        necessities: 'Required: Potatoes',
+        author: 'Boris',
+        necessities: ['Potatoes', 'Pan/Wok'],
         description: '7 recipes to up your potato game. There is no waste.',
-        ingredients: ['potatoes', 'pan', 'wok'], 
+        ingredients: ['Potatoes', 'Pan/Wok'], 
         time: 15,
     },
     { url: 'https://www.youtube.com/watch?v=-heI0TqcxFo', 
@@ -334,70 +347,51 @@ function displayRecipes(recipes) {
         const recipeItem = document.createElement('div');
         recipeItem.classList.add('recipe-item');
 
-        // Create a clickable link wrapper
+        // Create a clickable link (wrapper for image and title)
         const recipeLink = document.createElement('a');
         recipeLink.href = recipe.url;
         recipeLink.classList.add('recipe-link');
-        recipeLink.target = "_blank"; // Opens in new tab
+        recipeLink.target = "_blank"; // Open in new tab
 
-        //Create an image element for the thumbnail
+        // Create the thumbnail image
         const recipeImage = document.createElement('img');
-        recipeImage.src = recipe.image;
-        recipeImage.alt = 'Recipe Thumbnail';
+        recipeImage.src = recipe.image || 'images/default.jpg'; // Use default if missing
+        recipeImage.alt = recipe.title;
         recipeImage.classList.add('recipe-thumbnail');
 
-        //Create an image element for the thumbnail
-        //const recipeDetails = document.createElement('div');
-        //recipeDetails.classList.add('recipe-details')
-
-        // Create the clickable recipe title inside the link
+        // Create the recipe title
         const recipeTitle = document.createElement('h3');
         recipeTitle.textContent = recipe.title;
         recipeTitle.classList.add('recipe-title');
 
-        // Create an element for the Author
-        const recipeAuthor = document.createElement('h4')
-        recipeTable.textContent = recipe.author;
-        recipeAuthor.classList.add('recipe-author');
-
-
-        //const recipeDescription = document.createElement('p');
-        //recipeDescription.textContent = recipe.description;
-        //recipeDescription.classList.add('recipe-description');
-
-        //const recipeNecessities = document.createElement('h5');
-        //recipeNecessities.textContent = recipe.necessities;
-        //recipeNecessities.classList.add('recipe-necessities');
-
-        // Append image and title inside the clickable link
+        // Append the image and title inside the link
         recipeLink.appendChild(recipeImage);
         recipeLink.appendChild(recipeTitle);
 
-        // Append the clickable link inside the recipe box
+        // Create an info container to hold the author & components
+        const recipeInfo = document.createElement('div');
+        recipeInfo.classList.add('recipe-info');
+
+        // Create the author label
+        const recipeAuthor = document.createElement('span');
+        recipeAuthor.textContent = `${recipe.author}`;
+        recipeAuthor.classList.add('recipe-author');
+
+        // Create the components box
+        const recipeComponents = document.createElement('div');
+        recipeComponents.classList.add('recipe-components');
+        recipeComponents.textContent = `${recipe.necessities.join(', ')}`;
+
+        // Append author & components to info container
+        recipeInfo.appendChild(recipeAuthor);
+        recipeInfo.appendChild(recipeComponents);
+
+        // Append everything to the recipe box
         recipeItem.appendChild(recipeLink);
+        recipeItem.appendChild(recipeInfo);
 
         // Add the recipe box to the list
         recipesList.appendChild(recipeItem);
-        
-
-        // Create a link to the recipe
-        //const recipeLink = document.createElement('a');
-        //recipeLink.href = recipe.url;
-        //recipeLink.textContent = `View Recipe`;
-        //recipeLink.classList.add('recipe-link');
-
-        // Append details and link to the details container
-        //recipeDetails.appendChild(recipeTitle);
-        //recipeDetails.appendChild(recipeNecessities); 
-        //recipeDetails.appendChild(recipeDescription);
-        //recipeDetails.appendChild(recipeLink);
-        
-        // Append image and link to the recipe item
-        //recipeItem.appendChild(recipeImage);
-        //recipeItem.appendChild(recipeLink);
-        //recipeItem.appendChild(recipeDetails);
-        
-        //recipesList.appendChild(recipeItem);
     });
 }
 

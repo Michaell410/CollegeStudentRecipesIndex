@@ -68,7 +68,7 @@ body {
 h1 {
     font-weight: normal;
     color: #4c3530;
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     margin-bottom: 20px;
 }
@@ -111,7 +111,7 @@ p {
     bottom: 20px; /* Position it slightly above the bottom for aesthetics */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
-    width: 450px; /* Make the width fit the content */
+    max-width: 450px; /* Make the width fit the content */
     height: auto; /* Adjust height to fit the buttons */
     display: flex;
     justify-content: center; /* Center the buttons */
@@ -171,7 +171,8 @@ p {
     height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #ffffff;
+    background-color: #dcdcdc81;
+    backdrop-filter: blur(5px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     padding: 20px;
@@ -355,8 +356,9 @@ p {
 
 /* Recipe Title */
 .recipe-title {
+    height: 32px;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     margin: 15px;
     margin-top: 10px;
@@ -364,15 +366,38 @@ p {
     text-align: left;
 }
 
-/*.recipe-item a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #51a007;
-    font-weight: bold;
+/* Recipe Information Container */
+.recipe-info {
     display: flex;
-    justify-content: flex-start;
-    padding-left: 10px;
-}*/
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    background-color: #f7f7f700;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+
+/* Author Styling */
+.recipe-author {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #555;
+    margin-right: 10px
+}
+
+/* Components Box */
+.recipe-components {
+    font-family: 'Inter', sans-serif;
+    max-width: 50%;
+    font-size: 13px;
+    color: #666;
+    background-color: #dadada;
+    padding: 4px 8px;
+    border-radius: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .recipe-item a:hover {
     text-decoration: underline;
