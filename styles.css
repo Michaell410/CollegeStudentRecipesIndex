@@ -117,10 +117,10 @@ p {
     justify-content: center; /* Center the buttons */
     background-color: #da5c08db; /* Background color for the bar */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    border-radius: 60px; /* Round the corners for a neat look */
-    padding: 10px; /* Add some spacing inside the bar */
-    padding-left: 20px;
-    padding-right: 20px;
+    border-radius: 60px; 
+    padding: 5px; /* Add some spacing inside the bar */
+    padding-left: 25px;
+    padding-right: 25px;
     z-index: 10; /* Ensure it stays on top of other content */
     backdrop-filter: blur(3px);
 }
@@ -133,7 +133,6 @@ p {
 .selector-icon {
     width: 40px;
     height: 40px;
-    margin-bottom: 5px;
 }
 
 .selector-btn {
@@ -158,7 +157,6 @@ p {
 .selector-btn:active {
     color: #ffffff;
     background-color: #dd6e4200;
-    box-shadow: 0px 0px 0px 3px rgb(255, 104, 44);
     border-radius: 50px;
 }
 
@@ -171,9 +169,11 @@ p {
     height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #dcdcdc81;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #dcdcdcbe;
+    backdrop-filter: blur(10px); /* Blurs the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
     border-radius: 50px;
     padding: 20px;
 }
@@ -187,7 +187,11 @@ p {
     height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #ffffff;
+    background-color: #dcdcdcbe;
+    backdrop-filter: blur(10px); /* Blurs the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     padding: 20px;
@@ -202,47 +206,38 @@ p {
     height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #ffffff;
+    background-color: #dcdcdcbe;
+    backdrop-filter: blur(10px); /* Blurs the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     padding: 20px;
 }
 
 .filter-btn {
-    font-size: 16px;
-    background-color: #b5b5b5;
-    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 12px 17px;
     margin: 3px;
     cursor: pointer;
     border-radius: 30px;
-    transition-property: font-weight, padding, margin, border;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition-property: font-weight, padding, margin, border, color;
     transition-duration: 0.25s;
     transition-timing-function: ease-out;
 }
 
-.filter-btn:hover {
-    font-weight: bold;
-    /*box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.409);*/
-    background-color: #dd6e42;
-    border: #dd6e42;
+.filter-btn:active {
     padding: 12px 20px;
     margin: 3px;
     margin-left: 0px;
     margin-right: 0px;
 }
-
-.filter-btn.active {
-    /*box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.409);*/
-    background-color: #dd6e42;
-    border: #dd6e42;
-}
-
-/*.filter-btn:hover {
-    transform: scale(1.1);
-    padding: 11.5px 22px;
-}*/
 
 .time-btn {
     font-size: 16px;
@@ -269,35 +264,51 @@ p {
 }
 
 #protein-btn.active {
-    background-color: #EC5F5A;
+    background-color: #933c39;
+    font-weight: bold;
+    color: white;
 }
 
 #fiber-btn.active {
-    background-color: #BFE450;
+    background-color: #7c9418;
+    font-weight: bold;
+    color: white;
 }
 
 #diary-btn.active {
     background-color: #E5D798;
+    font-weight: bold;
+    color: white;
 }
 
 #carbs-btn.active {
-    background-color: #EFCE4E;
+    background-color: #ab8c10;
+    font-weight: bold;
+    color: white;
 }
 
 #fruits-btn.active {
-    background-color: #564eef;
+    background-color: #6434b1;
+    font-weight: bold;
+    color: white;
 }
 
 #sauce-btn.active {
-    background-color: #aa5b36;
+    background-color: #7e4429;
+    font-weight: bold;
+    color: white;
 }
 
 #utensil-btn {
     background-color: #DD6E42;
+    font-weight: bold;
+    color: white;
 }
 
 #utensil-btn.active {
-    background-color: #b5b5b5;
+    background-color: #ffffff;
+    font-weight: normal;
+    color: rgb(0, 0, 0);
 }
 
 .time-btn.active {
