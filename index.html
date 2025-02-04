@@ -22,13 +22,13 @@
             </div>
         </div>
 
-        <h1 class="title">Search recipes. Cheap and easy. No life stories.</h1>
+        <!--<h1 class="title">Search recipes. Cheap and easy. No life stories.</h1>-->
 
 <div class = "bottom-bar">
     <div class = "selector-btn-class">
-        <button class="selector-btn" onclick="ingredientFunction()"> <img src="icons/ingredients.svg" alt="Ingredients Icon" class = "selector-icon"></button>
-        <button class="selector-btn" onclick="utensilFunction()"> <img src="icons/utensils.svg" alt="Utensils Icon" class="selector-icon"></button>
-        <button class="selector-btn" onclick="timeFunction()"> <img src="icons/time.svg" alt="Time Icon" class="selector-icon"></button>
+        <button class="selector-btn" data-category="ingredients" onclick="ingredientFunction()"> <img src="icons/ingredients.svg" alt="Ingredients Icon" class = "selector-icon"></button>
+        <button class="selector-btn" data-category="utensils" onclick="utensilFunction()"> <img src="icons/utensils.svg" alt="Utensils Icon" class="selector-icon"></button>
+        <button class="selector-btn"  data-category="time" onclick="timeFunction()"> <img src="icons/time.svg" alt="Time Icon" class="selector-icon"></button>
     </div>
 </div>
 
@@ -76,12 +76,15 @@
 
         <!-- Time filter buttons -->
         <div class="time-filters" id = 'time-box'>
-            <h3>Cooking time</h3>
+            <!--<h3>Cooking time</h3>
             <button class="filter-btn time-btn" data-ingredient="5">5 Min</button>
             <button class="filter-btn time-btn" data-ingredient="10">10 Min</button>
             <button class="filter-btn time-btn" data-ingredient="15">15 Min</button>
             <button class="filter-btn time-btn" data-ingredient="20">20 Min</button>
-            <button class="filter-btn time-btn" data-ingredient="25">25 Min</button>
+            <button class="filter-btn time-btn" data-ingredient="25">25 Min</button>-->
+            <label for="time-slider">Max Cooking Time:</label>
+            <input type="range" id="time-slider" min="5" max="30" step="1" value="30">
+            <span id="time-value">30 min</span>
         </div>
     </div>
 

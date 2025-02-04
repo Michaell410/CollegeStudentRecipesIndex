@@ -237,15 +237,24 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const timeFilterButtons = document.querySelectorAll('.time-btn');
 const recipesList = document.getElementById('recipes-list');
 const utensilFilterButtons = document.querySelectorAll('.utensil-filter');
+const timeSlider = document.getElementById("time-slider");
+const timeValue = document.getElementById("time-value");
 
 let activeFilters = [];
 let excludedUtensils = [];
-let maxCookingTime = Infinity;
+let maxCookingTime = parseInt(timeSlider.value); // Default value from slider
+
+// Update displayed time when slider changes
+timeSlider.addEventListener("input", () => {
+    maxCookingTime = parseInt(timeSlider.value);
+    timeValue.textContent = `${maxCookingTime} min`;
+    updateRecipeList();
+});
 
 // Function to update the recipe list based on selected filters
 function updateRecipeList() {
     const ingredientFilters = Array.from(
-        document.querySelectorAll('.filter-btn.active:not(.utensil-filter):not(.time-btn)')
+        document.querySelectorAll('.filter-btn.active:not(.utensil-filter):not(.time-slider)')
     ).map(button => button.dataset.ingredient);
 
     console.log('Active Ingredients:', ingredientFilters);
@@ -332,6 +341,29 @@ function utensilFunction() {
       z.style.display = "none";
     }
   }
+
+  const bottomBar = document.querySelector('.bottom-bar');
+  const selectorButtons = document.querySelectorAll('.selector-btn');
+  
+  // Add event listeners to category buttons
+  selectorButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const category = button.dataset.category;
+  
+          // Reset previous states
+          bottomBar.classList.remove('rotate-left', 'rotate-right', 'translate-up');
+  
+          // Determine animation based on button position
+          if (category === 'ingredients') {
+              bottomBar.classList.add('rotate-left');
+          } else if (category === 'utensils') {
+              bottomBar.classList.add('rotate-right');
+          } else if (category === 'time') {
+              bottomBar.classList.add('translate-up');
+          }
+      });
+  });
+
 
 // Function to display the recipes with thumbnails
 function displayRecipes(recipes) {
@@ -443,7 +475,6 @@ utensilFilterButtons.forEach(button => {
         updateRecipeList();
     });
 });
-
 
 // Initial load with all recipes displayed
 updateRecipeList();
