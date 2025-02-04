@@ -342,27 +342,44 @@ function utensilFunction() {
     }
   }
 
-  const bottomBar = document.querySelector('.bottom-bar');
-  const selectorButtons = document.querySelectorAll('.selector-btn');
-  
-  // Add event listeners to category buttons
-  selectorButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          const category = button.dataset.category;
-  
-          // Reset previous states
-          bottomBar.classList.remove('rotate-left', 'rotate-right', 'translate-up');
-  
-          // Determine animation based on button position
-          if (category === 'ingredients') {
-              bottomBar.classList.add('rotate-left');
-          } else if (category === 'utensils') {
-              bottomBar.classList.add('rotate-right');
-          } else if (category === 'time') {
-              bottomBar.classList.add('translate-up');
-          }
-      });
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const bottomBar = document.querySelector('.bottom-bar');
+    const categoryButtons = document.querySelectorAll('.selector-btn');
+    let activeButton = null; // Track the currently selected button
+
+    // Add event listeners to category buttons
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+
+            // Reset previous states (remove effects from all buttons)
+            bottomBar.classList.remove('rotate-left', 'rotate-right', 'translate-up');
+            categoryButtons.forEach(btn => btn.classList.remove('floating'));
+
+            // If the same button is clicked again, deselect it (bring it down)
+            if (activeButton === button) {
+                activeButton = null;
+                return;
+            }
+
+            // Animate bowl rotation or movement
+            if (category === 'ingredients') {
+                bottomBar.classList.add('rotate-right');
+            } else if (category === 'utensils') {
+                bottomBar.classList.add('translate-up');
+            } else if (category === 'time') {
+                bottomBar.classList.add('rotate-left');
+            }
+
+            // Allow button to move independently
+            setTimeout(() => {
+                button.classList.add('floating');
+            }, 200); // Small delay for realism
+
+            activeButton = button;
+        });
+    });
+});
 
 
 // Function to display the recipes with thumbnails

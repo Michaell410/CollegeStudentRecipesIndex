@@ -116,8 +116,8 @@ p {
     height: auto; /* Adjust height to fit the buttons */
     display: flex;
     justify-content: center; /* Center the buttons */
-    background-color: #ffffff00; /* Background color for the bar */
-    border: 10px solid black;
+    background-color: #313a46; /* Background color for the bar */
+    border: 10px solid #1e272e;
     border-top: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     border-radius: 60px; 
@@ -161,25 +161,33 @@ p {
     font-size: 18px;
     color: #ffffff;
     border: none;
-    background-color: #b5b5b500;
-    padding: 12px 17px;
-    border-radius: 15px;
+    background-color: #ffdd59;
+    padding: 10px 17px;
+    border-radius: 35px;
     margin: 0 10px;
     cursor: pointer;
     transition-property: color, background-color, box-shadow, margin, padding;
     transition-duration: .25s;
     transition-timing-function: ease-out;
+    position: relative; /* Required for floating effect */
 }
 
-.selector-btn:hover {
-    font-weight: bold;
-    padding: 11.5px 22px;
+/* Buttons move with the bottom bar (default state) */
+.bottom-bar.rotate-left .selector-btn,
+.bottom-bar.rotate-right .selector-btn,
+.bottom-bar.translate-up .selector-btn {
+    transition: transform 0.5s ease-out;
 }
 
-.selector-btn:active {
-    color: #ffffff;
-    background-color: #dd6e4200;
-    border-radius: 50px;
+/* Floating Effect - Selected Button Moves Independently */
+.selector-btn.floating {
+    transform: translateY(-40px) rotate(45deg) !important; /* Moves up independently */
+    transition: transform 0.3s ease-out;
+}
+
+/* Falling Effect - Button Returns Down */
+.selector-btn:not(.floating) {
+    transition: transform 0.3s ease-out;
 }
 
 .filters {
