@@ -343,6 +343,23 @@ function utensilFunction() {
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menu-button");
+    const dropdownMenu = document.getElementById("dropdown-menu");
+
+    menuButton.addEventListener("click", () => {
+        // Toggle visibility
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Optional: Close the menu if clicking outside
+    window.addEventListener("click", (event) => {
+        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+});
+
+  document.addEventListener("DOMContentLoaded", () => {
     const bottomBar = document.querySelector('.bottom-bar');
     const categoryButtons = document.querySelectorAll('.selector-btn');
     let activeButton = null; // Track the currently selected button
@@ -362,15 +379,6 @@ function utensilFunction() {
                 return;
             }
 
-            // Animate bowl rotation or movement
-            if (category === 'ingredients') {
-                bottomBar.classList.add('rotate-left');
-            } else if (category === 'utensils') {
-                bottomBar.classList.add('translate-up');
-            } else if (category === 'time') {
-                bottomBar.classList.add('rotate-right');
-            }
-
             // Allow button to move independently
             setTimeout(() => {
                 button.classList.add('floating');
@@ -387,8 +395,8 @@ const closeModal = document.getElementById("close-modal");
 const viewRecipeBtn = document.getElementById("view-recipe-btn");
 
 const modalImage = document.getElementById("modal-image");
-const modalTitle = document.getElementById("modal-title");
 const modalAuthor = document.getElementById("modal-author");
+const modalTitle = document.getElementById("modal-title");
 const modalComponents = document.getElementById("modal-components");
 const modalDescription = document.getElementById("modal-description");
 
@@ -397,8 +405,8 @@ let currentRecipeUrl = ""; // Store the recipe URL
 // Function to open the modal and show recipe details
 function openRecipeModal(recipe) {
     modalImage.src = recipe.image;
-    modalTitle.textContent = recipe.title;
     modalAuthor.textContent = `${recipe.author}`;
+    modalTitle.textContent = recipe.title;
     modalComponents.textContent = `Required: ${recipe.necessities.join(", ")}`;
     modalDescription.textContent = recipe.description;
 

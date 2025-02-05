@@ -8,20 +8,88 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     color: #333;
-    background-color: #A7CC81;
+    background-color: #ffffff;
+}
+
+/* Menu Button - Top Left */
+.menu-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+/* The Menu Button */
+.menu-button {
+    background: #ff634700;
+    color: #E27900;
+    font-size: 18px;
+    border: none;
+    padding: 2px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+/* Dropdown Menu - Hidden by Default */
+.dropdown-menu {
+    display: none; /* Hidden until clicked */
+    position: fixed;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 380px; /* Make the width fit the content */
+    height: auto;
+    top: 50px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
+
+.top-left {
+    background-color: #00000000;
+    border: 0;
+    font-size: 35px;
+    font-weight: normal;
+    color: white;
+}
+
+.top-right{
+    background-color: #00000000;
+    border: 0;
 }
 
 .top-bar {
     top: 0;
     left: 0;
     position: sticky;
-    margin-bottom: 10px;
     width: 100%;
-    height: 60px;
-    background-color: #FFCA00; 
+    height: 50px;
+    background-color: #ffffff; 
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
     padding: 0 20px;
-    z-index: 1000; 
+    z-index: 999; 
     color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
 }
 
 .brand-logo {
@@ -30,16 +98,17 @@ body {
     justify-content: space-between;
 }
 
-.logo {
-    width: 40px;
-    height: 40px;
+.account-icon{
+    background-color: rgba(255, 255, 255, 0);
+    border: #00000000;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
     margin: 10px;
 }
 
 
 .brand-name {
-    font-size: 1.5em;
     font-weight: bold;
     font-family: Arial, sans-serif;
     color: white;
@@ -65,6 +134,15 @@ h3 {
     margin: 10px;
 }
 
+h4 {
+    font-family: 'Inter', sans-serif;
+    color: #E27900;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    margin: 10px;
+}
+
 h5 {
     font-size: 16px;
     background-color: #b5b5b5;
@@ -76,51 +154,46 @@ h5 {
     border-radius: 30px;
 }
 
-p {
-    color: #4c3530;
-    text-align: left;
-    font-size: 16px;
-    margin: 10px;
+/* Bottom Box - Default (Mobile: Full Width) */
+.real-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width on mobile */
+    height: 10%;
+    background-color: #E27900;
+    backdrop-filter: blur(10px); /* Blurs the background behind it */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
 }
 
 .bottom-bar {
     position: fixed;
-    bottom: 20px; /* Position it slightly above the bottom for aesthetics */
+    bottom: 0px; /* Position it slightly above the bottom for aesthetics */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
     max-width: 450px; /* Make the width fit the content */
     height: auto; /* Adjust height to fit the buttons */
     display: flex;
     justify-content: center; /* Center the buttons */
-    background-color: #313a46; /* Background color for the bar */
-    border: 10px solid #1e272e;
+    background-color: #ffffff00; /* Background color for the bar */
+    border: 10px solid #1e272e00;
     border-top: 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     border-radius: 60px; 
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    padding: 5px; /* Add some spacing inside the bar */
+    padding: 0px; /* Add some spacing inside the bar */
     padding-left: 25px;
     padding-right: 25px;
     z-index: 10; /* Ensure it stays on top of other content */
-    backdrop-filter: blur(3px);
-
-    /* Animation transition */
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Active states for rotation */
-.bottom-bar.rotate-left {
-    transform: translateX(-50%) rotate(-10deg);
-}
-
-.bottom-bar.rotate-right {
-    transform: translateX(-50%) rotate(10deg);
-}
-
-/* Move bowl upwards */
-.bottom-bar.translate-up {
-    transform: translateX(-50%) translateY(-30px);
 }
 
 .selector-btn-class {
@@ -129,52 +202,68 @@ p {
 }
 
 .selector-icon {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
 }
 
 .selector-btn {
     font-size: 18px;
-    color: #ffffff;
-    border: none;
-    background-color: #ffdd59;
-    padding: 10px 17px;
-    border-radius: 35px;
+    background-color: #ffffff00;
+    border: 0;
+    width: 70px;
+    height:70px;
+    border-radius: 30px;
     margin: 0 10px;
     cursor: pointer;
     transition-property: color, background-color, box-shadow, margin, padding;
-    transition-duration: .25s;
+    transition-duration: .1s;
     transition-timing-function: ease-out;
     position: relative; /* Required for floating effect */
 }
 
-/* Buttons move with the bottom bar (default state) */
-.bottom-bar.rotate-left .selector-btn,
-.bottom-bar.rotate-right .selector-btn,
-.bottom-bar.translate-up .selector-btn {
-    transition: transform 0.5s ease-out;
-}
-
-/* Floating Effect - Selected Button Moves Independently */
+/* Floating Effect - Selected Button Moves */
 .selector-btn.floating {
-    transform: translateY(-40px) rotate(45deg) !important; /* Moves up independently */
-    transition: transform 0.3s ease-out;
+    animation: floatUp 0.1s ease-out forwards; /* Moves up */
 }
 
-/* Falling Effect - Button Returns Down */
+/* Apply Falling Animation When Deselected */
 .selector-btn:not(.floating) {
-    transition: transform 0.3s ease-out;
+    animation: fallDown 0.1s ease-out forwards; /* Moves back down */
+}
+
+/* Floating Effect - Button Moves Up */
+@keyframes floatUp {
+    0% { 
+        transform: translateY(0); 
+        background-color: #e2780000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Soft shadow for depth */
+    }
+    100% { 
+        transform: translateY(-30px); 
+        background-color: #C53B00;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    }
+}
+
+/* Falling Effect - Button Moves Down */
+@keyframes fallDown {
+    0% { 
+        transform: translateY(-30px); 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
 }
 
 .filters {
     position: fixed;
-    bottom: 150px; 
+    bottom: 130px; 
     left: 50%; 
     transform: translateX(-50%);
     height: auto;
     width: 380px;
     z-index: 10;
-    background-color: #dcdcdcbe;
+    background-color: #dcdcdcd7;
     backdrop-filter: blur(10px); /* Blurs the background behind it */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
@@ -186,14 +275,14 @@ p {
 
 .utensil-filters{
     position: fixed;
-    bottom: 150px; 
+    bottom: 130px; 
     left: 50%; 
     transform: translateX(-50%);
     width: 380px;
     height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #dcdcdcbe;
+    background-color: #dcdcdcd7;
     backdrop-filter: blur(10px); /* Blurs the background behind it */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
@@ -206,14 +295,14 @@ p {
 
 .time-filters{
     position: fixed;
-    bottom: 150px; 
+    bottom: 130px; 
     left: 50%; 
     transform: translateX(-50%);
     width: 380px;
     height: auto;
     margin: 0px;
     z-index: 10;
-    background-color: #dcdcdcbe;
+    background-color: #dcdcdcd7;
     backdrop-filter: blur(10px); /* Blurs the background behind it */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
@@ -250,7 +339,7 @@ p {
     appearance: none;
     width: 18px;
     height: 18px;
-    background: #FF6347;
+    background: #E27900;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.2s;
@@ -286,30 +375,6 @@ p {
 }
 
 .filter-btn:active {
-    padding: 12px 20px;
-    margin: 3px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.time-btn {
-    font-size: 16px;
-    background-color: #b5b5b5;
-    color: white;
-    border: 5px solid #dd6e4200;
-    padding: 12px 17px;
-    margin: 3px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition-property: font-weight, padding, margin, border, background-color, color, border;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-out;
-}
-
-.time-btn:hover {
-    background-color: #ffffff;
-    color: #4c3530;
-    border: 5px solid #dd6e42;
     padding: 12px 20px;
     margin: 3px;
     margin-left: 0px;
@@ -353,7 +418,7 @@ p {
 }
 
 #utensil-btn {
-    background-color: #DD6E42;
+    background-color: #E27900;
     font-weight: bold;
     color: white;
 }
@@ -362,22 +427,6 @@ p {
     background-color: #ffffff;
     font-weight: normal;
     color: rgb(0, 0, 0);
-}
-
-.time-btn.active {
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #4c3530;
-    border: 5px solid #dd6e42;
-    padding: 12px 20px;
-    margin: 3px;
-    margin-left: 0px;
-    margin-right: 0px;
-    cursor: pointer;
-    border-radius: 30px;
-    transition-property: font-weight, padding, margin, border;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-out;
 }
 
 .recipes-list {
@@ -488,7 +537,7 @@ p {
     max-width: 600px;
     margin: 10px;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: fadeIn 0.3s ease-in-out;
@@ -507,7 +556,9 @@ p {
 /* Enlarged Recipe Image */
 .modal-thumbnail {
     width: 100%;
-    border-radius: 10px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 7px;
 }
 
 /* Recipe Title */
@@ -532,8 +583,8 @@ p {
     margin: 15px;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
-    color: #666;
-    background-color: #dadada;
+    color: #ffffff;
+    background-color: #E27900;
     padding: 4px 8px;
     border-radius: 7px;
     white-space: nowrap;
@@ -550,9 +601,9 @@ p {
 
 /* View Full Recipe Button */
 .view-recipe-btn {
-    background-color: #FFCA00;
+    background-color: #E27900;
     color: white;
-    font-size: 1em;
+    font-size: 15px;
     padding: 10px 15px;
     margin: 15px;
     border: none;
@@ -563,6 +614,16 @@ p {
 
 .view-recipe-btn:hover {
     background-color: #d9534f;
+}
+
+/* Desktop: Set width to 500px and center it */
+@media (min-width: 768px) { 
+    .bottom-bar {
+        width: 500px;
+        left: 50%;
+        transform: translateX(-50%); /* Center it */
+        border-radius: 10px 10px 0 0; /* Optional: Rounded edges on desktop */
+    }
 }
 
 /* Modal Fade-In Effect */

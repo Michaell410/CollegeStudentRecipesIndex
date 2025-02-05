@@ -13,41 +13,60 @@
 
 <body>
 
-<!-- Recipe Preview Modal (Initially Hidden) -->
+    <!-- Recipe Preview Modal (Initially Hidden) -->
 <div id="recipe-modal" class="recipe-modal">
     <div class="recipe-modal-content">
         <span id="close-modal" class="close-modal">&times;</span>
         <img id="modal-image" class="modal-thumbnail" src="" alt="Recipe Image">
-        <h2 id="modal-title"></h2>
         <p id="modal-author"></p>
+        <h3 id="modal-title"></h3>
         <div id="modal-components" class="modal-components"></div>
         <p id="modal-description"></p>
         <button id="view-recipe-btn" class="view-recipe-btn">View Full Recipe</button>
     </div>
 </div>
 
-    <div class="container">
-
-        <div class = "top-bar">
-            <div class="brand-logo">
-                <img src="icons/cooking.png" alt="Brand Logo" class="logo">
-                <h1 class="brand-name">Recipe Finder</h1>
-            </div>
+    <div class="menu-container">
+        <button id="menu-button" class="menu-button">☰</button>
+        <div id="dropdown-menu" class="dropdown-menu">
+            <button class="dropdown-item">Settings</button>
+            <button class="dropdown-item">Preferences</button>
         </div>
+    </div>
+
+    <div class = "top-bar">
+        <div class="brand-logo">
+            <button class="top-left"></button>
+            <button class="top-right"><img src="icons/account.svg" alt="Accounts Icon" class="account-icon"></button>
+        </div>
+    </div>
+
+<!-- Settings Preview (Initially Hidden) -->
+<div id="recipe-modal" class="recipe-modal">
+    <div class="settings-modal-content">
+        <button id="preferences">Preferences</button>
+        <button id="preferences">About</button>
+        <button id="preferences">Exit</button>
+    </div>
+</div>
+
+    <div class="container">
 
         <!--<h1 class="title">Search recipes. Cheap and easy. No life stories.</h1>-->
 
 <div class = "bottom-bar">
     <div class = "selector-btn-class">
-        <button class="selector-btn" data-category="ingredients" onclick="ingredientFunction()"> <img src="icons/ingredients.svg" alt="Ingredients Icon" class = "selector-icon"></button>
-        <button class="selector-btn" data-category="utensils" onclick="utensilFunction()"> <img src="icons/utensils.svg" alt="Utensils Icon" class="selector-icon"></button>
-        <button class="selector-btn"  data-category="time" onclick="timeFunction()"> <img src="icons/time.svg" alt="Time Icon" class="selector-icon"></button>
+        <button class="selector-btn" id="utensil-category-btn"  data-category="utensils" onclick="utensilFunction()"> <img src="icons/utensils.svg" alt="Utensils Icon" class="selector-icon"></button>
+        <button class="selector-btn" id="ingredient-btn" data-category="ingredients" onclick="ingredientFunction()"> <img src="icons/ingredients.svg" alt="Ingredients Icon" class = "selector-icon"></button>
+        <button class="selector-btn" id="time-btn"   data-category="time" onclick="timeFunction()"> <img src="icons/time.svg" alt="Time Icon" class="selector-icon"></button>
     </div>
 </div>
 
+<div class="real-bottom-bar"></div>
+
         <!-- Ingredient filter buttons -->
         <div class="filters" id = 'ingredient-box'>
-            <h3>Include ingredients</h3>
+            <h4>Include ingredients</h4>
             <button class="filter-btn" data-ingredient="Eggs" id="protein-btn">Eggs</button>
             <button class="filter-btn" data-ingredient="Beef" id="protein-btn">Beef</button>
             <button class="filter-btn" data-ingredient="Chicken" id="protein-btn">Chicken</button>
@@ -75,7 +94,7 @@
 
         <!-- Utensils filter buttons -->
         <div class="utensil-filters" id = 'utensil-box'>
-            <h3>Exclude utensils</h3>
+            <h4>Exclude utensils</h4>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="Pan/Wok">Pan/Wok</button>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="Pot">Pot</button>
             <button class="filter-btn utensil-filter" id='utensil-btn' data-utensil="Oven">Oven</button>
@@ -89,13 +108,7 @@
 
         <!-- Time filter buttons -->
         <div class="time-filters" id = 'time-box'>
-            <!--<h3>Cooking time</h3>
-            <button class="filter-btn time-btn" data-ingredient="5">5 Min</button>
-            <button class="filter-btn time-btn" data-ingredient="10">10 Min</button>
-            <button class="filter-btn time-btn" data-ingredient="15">15 Min</button>
-            <button class="filter-btn time-btn" data-ingredient="20">20 Min</button>
-            <button class="filter-btn time-btn" data-ingredient="25">25 Min</button>-->
-            <label for="time-slider">Max Cooking Time:</label>
+            <label for="time-slider"><h4>Max Cooking Time<h4></label>
             <input type="range" id="time-slider" min="5" max="30" step="1" value="30">
             <span id="time-value">30 min</span>
         </div>
