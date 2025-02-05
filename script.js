@@ -364,11 +364,11 @@ function utensilFunction() {
 
             // Animate bowl rotation or movement
             if (category === 'ingredients') {
-                bottomBar.classList.add('rotate-right');
+                bottomBar.classList.add('rotate-left');
             } else if (category === 'utensils') {
                 bottomBar.classList.add('translate-up');
             } else if (category === 'time') {
-                bottomBar.classList.add('rotate-left');
+                bottomBar.classList.add('rotate-right');
             }
 
             // Allow button to move independently
@@ -381,26 +381,56 @@ function utensilFunction() {
     });
 });
 
+// Get modal elements
+const modal = document.getElementById("recipe-modal");
+const closeModal = document.getElementById("close-modal");
+
+const modalImage = document.getElementById("modal-image");
+const modalTitle = document.getElementById("modal-title");
+const modalAuthor = document.getElementById("modal-author");
+const modalComponents = document.getElementById("modal-components");
+const modalDescription = document.getElementById("modal-description");
+
+// Function to open the modal and show recipe details
+function openRecipeModal(recipe) {
+    modalImage.src = recipe.image;
+    modalTitle.textContent = recipe.title;
+    modalAuthor.textContent = `By: ${recipe.author}`;
+    modalComponents.textContent = `Ingredients: ${recipe.necessities.join(", ")}`;
+    modalDescription.textContent = recipe.description;
+
+    modal.style.display = "flex"; // Show modal
+}
+
+// Close modal when clicking the close button
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Close modal if user clicks outside the content box
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
 // Function to display the recipes with thumbnails
 function displayRecipes(recipes) {
     const recipesList = document.getElementById('recipes-list');
     recipesList.innerHTML = '';
-    
+
     if (recipes.length === 0) {
         recipesList.innerHTML = '<p><br>Sorry, no recipes found, try changing the ingredients, utensils, or cooking time :).</p>';
         return;
     }
-    
+
     recipes.forEach(recipe => {
         const recipeItem = document.createElement('div');
         recipeItem.classList.add('recipe-item');
 
-        // Create a clickable link (wrapper for image and title)
-        const recipeLink = document.createElement('a');
-        recipeLink.href = recipe.url;
+        // Create a clickable div (instead of a link)
+        const recipeLink = document.createElement('div');
         recipeLink.classList.add('recipe-link');
-        recipeLink.target = "_blank"; // Open in new tab
 
         // Create the thumbnail image
         const recipeImage = document.createElement('img');
@@ -413,7 +443,7 @@ function displayRecipes(recipes) {
         recipeTitle.textContent = recipe.title;
         recipeTitle.classList.add('recipe-title');
 
-        // Append the image and title inside the link
+        // Append the image and title inside the clickable div
         recipeLink.appendChild(recipeImage);
         recipeLink.appendChild(recipeTitle);
 
@@ -438,6 +468,9 @@ function displayRecipes(recipes) {
         // Append everything to the recipe box
         recipeItem.appendChild(recipeLink);
         recipeItem.appendChild(recipeInfo);
+
+        // Add click event to open the modal
+        recipeLink.addEventListener('click', () => openRecipeModal(recipe));
 
         // Add the recipe box to the list
         recipesList.appendChild(recipeItem);
