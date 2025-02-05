@@ -10,7 +10,7 @@ const recipes = [
         title: 'Plov Student Edition',
         author: 'Boris',
         necessities: ['Rice', 'Meat', 'Vegetables', 'Pot'],
-        /*description: 'Rice, Meat or Vegetables necessary, all steamed in one pot',*/
+        description: 'Rice, Meat or Vegetables necessary, all steamed in one pot',
         ingredients: ['Rice', 'Beef', 'Carrots', 'Garlic', 'Onions', 'Pot', 'Pan/Wok', ], 
         time: 25,
     },
@@ -19,7 +19,7 @@ const recipes = [
         title: 'An 18th Century Cheese Soup',
         author: 'Townsends',
         necessities: ['Bread', 'Cheese.'],
-        /*description: 'A wholsome historical recipe using just bread and cheese.',*/
+        description: 'A wholsome historical recipe using just bread and cheese.',
         ingredients: ['Cheese', 'Bread', 'Pot', 'Pan/Wok'], 
         time: 25,
     },
@@ -28,7 +28,7 @@ const recipes = [
         title: '7 Ways to Cook Instant Noodles',
         author: 'Boris',
         necessities: ['Instant Noodles', 'Pan/Wok'],
-        /*description: '7 ways to cook instant noodles, contains some comedic exaggeration.',*/
+        description: '7 ways to cook instant noodles, contains some comedic exaggeration.',
         ingredients: ['Instant Noodles', 'Pan/Wok'], 
         time: 5,
     },
@@ -37,7 +37,7 @@ const recipes = [
        title: 'Tuna Noodles',
        author: 'JCurphy',
        necessities: ['Tuna', 'Microwave'],
-       /*description: 'Bring a twist to instant noodles.',*/
+       description: 'Bring a twist to instant noodles.',
        ingredients: ['Instant Noodles', 'Tuna', 'Microwave'], 
        time: 5,
     },
@@ -384,6 +384,7 @@ function utensilFunction() {
 // Get modal elements
 const modal = document.getElementById("recipe-modal");
 const closeModal = document.getElementById("close-modal");
+const viewRecipeBtn = document.getElementById("view-recipe-btn");
 
 const modalImage = document.getElementById("modal-image");
 const modalTitle = document.getElementById("modal-title");
@@ -391,16 +392,26 @@ const modalAuthor = document.getElementById("modal-author");
 const modalComponents = document.getElementById("modal-components");
 const modalDescription = document.getElementById("modal-description");
 
+let currentRecipeUrl = ""; // Store the recipe URL
+
 // Function to open the modal and show recipe details
 function openRecipeModal(recipe) {
     modalImage.src = recipe.image;
     modalTitle.textContent = recipe.title;
-    modalAuthor.textContent = `By: ${recipe.author}`;
-    modalComponents.textContent = `Ingredients: ${recipe.necessities.join(", ")}`;
+    modalAuthor.textContent = `${recipe.author}`;
+    modalComponents.textContent = `Required: ${recipe.necessities.join(", ")}`;
     modalDescription.textContent = recipe.description;
 
+    currentRecipeUrl = recipe.url; // Store the URL for later use
     modal.style.display = "flex"; // Show modal
 }
+
+// When the button is clicked, redirect to the stored recipe URL
+viewRecipeBtn.addEventListener("click", () => {
+    if (currentRecipeUrl) {
+        window.open(currentRecipeUrl, "_blank"); // Open in a new tab
+    }
+});
 
 // Close modal when clicking the close button
 closeModal.addEventListener("click", () => {

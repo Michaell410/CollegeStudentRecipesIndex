@@ -14,6 +14,7 @@ body {
 .top-bar {
     top: 0;
     left: 0;
+    position: sticky;
     margin-bottom: 10px;
     width: 100%;
     height: 60px;
@@ -21,7 +22,6 @@ body {
     padding: 0 20px;
     z-index: 1000; 
     color: white;
-    border-radius: 60px;
 }
 
 .brand-logo {
@@ -56,35 +56,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.title {
-    color: #4c3530;
-    padding: 17px;
-    padding-left: 27px;
-    background-color: rgb(231, 231, 231);
-    border: 2px Solid #ff804e;
-    border-radius: 50px;
-}
-
-h1 {
-    font-weight: normal;
-    color: #4c3530;
-    font-size: 15px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #4c3530;
-    font-size: 18px;
-    margin: 10px;
-    text-align: center;
-}
-
 h3 {
     font-family: 'Inter', sans-serif;
-    font: 15px;
     color: #000000;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: normal;
     text-align: left;
     margin: 10px;
 }
@@ -195,9 +171,8 @@ p {
     bottom: 150px; 
     left: 50%; 
     transform: translateX(-50%);
-    width: 400px;
     height: auto;
-    margin: 0px;
+    width: 380px;
     z-index: 10;
     background-color: #dcdcdcbe;
     backdrop-filter: blur(10px); /* Blurs the background behind it */
@@ -214,7 +189,7 @@ p {
     bottom: 150px; 
     left: 50%; 
     transform: translateX(-50%);
-    width: 400px;
+    width: 380px;
     height: auto;
     margin: 0px;
     z-index: 10;
@@ -234,7 +209,7 @@ p {
     bottom: 150px; 
     left: 50%; 
     transform: translateX(-50%);
-    width: 400px;
+    width: 380px;
     height: auto;
     margin: 0px;
     z-index: 10;
@@ -510,9 +485,8 @@ p {
 /* Modal Content */
 .recipe-modal-content {
     background: white;
-    width: 80%;
     max-width: 600px;
-    padding: 20px;
+    margin: 10px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -522,10 +496,11 @@ p {
 
 /* Close Button */
 .close-modal {
+    color: white;
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -537,33 +512,57 @@ p {
 
 /* Recipe Title */
 #modal-title {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #333;
+    margin: 15px;
 }
 
 /* Recipe Author */
 #modal-author {
-    font-size: 1em;
-    color: #777;
-    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #555;
+    margin: 15px
 }
 
 /* Recipe Components */
 .modal-components {
-    background: rgba(255, 165, 0, 0.2);
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px 0;
-    font-size: 0.9em;
-    color: #333;
+    margin: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #666;
+    background-color: #dadada;
+    padding: 4px 8px;
+    border-radius: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Recipe Description */
 #modal-description {
-    font-size: 1em;
+    margin: 15px;
+    font-size: 13px;
     color: #555;
-    margin: 10px 0;
+}
+
+/* View Full Recipe Button */
+.view-recipe-btn {
+    background-color: #FFCA00;
+    color: white;
+    font-size: 1em;
+    padding: 10px 15px;
+    margin: 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.view-recipe-btn:hover {
+    background-color: #d9534f;
 }
 
 /* Modal Fade-In Effect */
